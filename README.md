@@ -6,7 +6,7 @@ Three independently installable Agent Skills for bilingual church and teaching w
 | --- | --- | --- |
 | [Singable Lyric Translator](singable-lyric-translator/) | Translate lyrics and prepare approved scores | [Existing releases](https://github.com/subverse-rosa/singable-lyric-translator/releases) |
 | [Teaching Slides](teaching-slides/) | Develop and review sermon or lecture decks | [Existing preview release](https://github.com/subverse-rosa/teaching-slides/releases/tag/v0.2.0) |
-| [Worship Slides](worship-slides/) | Build a service deck, including lyrics and numbered notation | [Install from the skill directory](worship-slides/) |
+| [Worship Slides](worship-slides/) | Build a service deck, including lyrics and numbered notation | [Download v0.4.1](https://github.com/subverse-rosa/ministry-tools/releases/tag/worship-slides-v0.4.1) |
 
 The translator can export a reviewed MEI score and `lyric-handoff/1` events for Worship Slides. Teaching Slides can start from a manuscript or outline, including one prepared with [ROSA](https://github.com/subverse-rosa/rosa-skill). Each skill can also be used on its own.
 

@@ -1,6 +1,8 @@
 ---
 name: worship-slides
 description: Builds the weekly Sunday-service PowerPoint (主日崇拜 PPT) from the church's weekly template plus this week's flow, scripture (新译本), creeds, hymn decks and jianpu (简谱) scores, in one of several LED-friendly colour profiles. Use when the user asks to make or update 主日崇拜 slides, 崇拜PPT, worship slides, lyric or 简谱 slides, responsive-reading (启应) slides, or to change the service colour profile (色系).
+metadata:
+  version: "0.4.1"
 ---
 
 # 主日崇拜 slides

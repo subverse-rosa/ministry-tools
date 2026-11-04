@@ -2,6 +2,9 @@
 
 Agent Skill（SKILL.md 标准格式），Claude、Codex 等能读 skill、能跑 shell 的 agent 都可以用。
 
+从 [v0.4.1 发布页](https://github.com/subverse-rosa/ministry-tools/releases/tag/worship-slides-v0.4.1)
+下载 `worship-slides_v0.4.1.zip`，解压得到一个 `worship-slides/` 文件夹。校验值见同一页的 `SHA256.txt`。
+
 安装：把整个 `worship-slides/` 文件夹放进该 agent 的 skills 目录（路径以各工具文档为准），例如
 - Claude Code：`~/.claude/skills/worship-slides/`（或项目里的 `.claude/skills/`）
 - Codex：`~/.codex/skills/worship-slides/`

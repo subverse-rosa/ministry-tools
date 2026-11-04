@@ -1,7 +1,9 @@
 # Changelog
 
-## Unreleased
-- Move public development to Ministry Tools. Use invented service and palette examples. Rendering logic is unchanged.
+## 0.4.1 — 2026-11-05
+- First public installable release from Ministry Tools.
+- Bundle a runnable sample service, score handoff and palette previews with invented material.
+- Stamp 0.4.1 in the provenance of newly built decks.
 
 ## 0.4.0 — 2026-10-29
 - One delivery spec: `references/delivery.md` (what a delivered deck, song folder and yaml must be).
