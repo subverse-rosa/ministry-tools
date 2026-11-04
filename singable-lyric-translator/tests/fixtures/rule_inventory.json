@@ -1,0 +1,225 @@
+{
+  "note": "Declaration lint only. The 44 local rule names are retained; Markdown headings, emphasis and exact native example wording are not behavioral evidence.",
+  "rules": [
+    {
+      "id": "R01",
+      "name": "levels A/B/C table",
+      "pattern": "(?:Level\\s+A|\\|\\s*A\\s*\\|).*?(?:Level\\s+B|\\|\\s*B\\s*\\|).*?(?:Level\\s+C|\\|\\s*C\\s*\\|)"
+    },
+    {
+      "id": "R02",
+      "name": "Level B must not claim tone validation",
+      "pattern": "未验证旋律"
+    },
+    {
+      "id": "R03",
+      "name": "Level C labelled 临时",
+      "pattern": "临时"
+    },
+    {
+      "id": "R04",
+      "name": "audit mode for supplied Chinese draft",
+      "pattern": "audit mode"
+    },
+    {
+      "id": "R05",
+      "name": "slot map before tone/vowel",
+      "pattern": "Level A slot map"
+    },
+    {
+      "id": "R06",
+      "name": "image/PDF-read melody disclosed",
+      "pattern": "音高由谱面图像读取"
+    },
+    {
+      "id": "R07",
+      "name": "rest must not split a two-character word",
+      "pattern": "(?:rest|breath).*?must not split a two-character word"
+    },
+    {
+      "id": "R08",
+      "name": "priority ladder with English word order last",
+      "pattern": "core terms.*>.*slot fit.*>.*tone.*>.*natural.*>.*structural.*>.*English word order"
+    },
+    {
+      "id": "R09",
+      "name": "global term change stays a proposal",
+      "pattern": "the change is a proposal"
+    },
+    {
+      "id": "R10",
+      "name": "candidates counted first with --variants",
+      "pattern": "--variants"
+    },
+    {
+      "id": "R11",
+      "name": "count mismatch marked with cross and exact count",
+      "pattern": "✗"
+    },
+    {
+      "id": "R12",
+      "name": "nearest valid version offered",
+      "pattern": "nearest valid version"
+    },
+    {
+      "id": "R13",
+      "name": "core faith terms never swapped",
+      "pattern": "Never drop, secularize or swap"
+    },
+    {
+      "id": "R14",
+      "name": "Commonwealth spelling",
+      "pattern": "Commonwealth spelling"
+    },
+    {
+      "id": "R15",
+      "name": "seven-item conflict order incl. weak function word",
+      "pattern": "weak function word or 轻声"
+    },
+    {
+      "id": "R16",
+      "name": "fixed compounds ignored",
+      "pattern": "fixed compounds or idioms"
+    },
+    {
+      "id": "R17",
+      "name": "sustained calibration",
+      "pattern": "Sustained means"
+    },
+    {
+      "id": "R18",
+      "name": "three-card budget",
+      "pattern": "Max 3 cards"
+    },
+    {
+      "id": "R19",
+      "name": "cards need two eligible options",
+      "pattern": "two currently eligible options"
+    },
+    {
+      "id": "R20",
+      "name": "audit against the song's own lyric",
+      "pattern": "not in the lyric"
+    },
+    {
+      "id": "R21",
+      "name": "retract overturned flags",
+      "pattern": "retract it explicitly"
+    },
+    {
+      "id": "R22",
+      "name": "report layers",
+      "pattern": "Report layers"
+    },
+    {
+      "id": "R23",
+      "name": "accepted wording not re-flagged",
+      "pattern": "not re-flagged"
+    },
+    {
+      "id": "R24",
+      "name": "targeted repairs keep user text",
+      "pattern": "keep every other character of the user's line"
+    },
+    {
+      "id": "R25",
+      "name": "context pass",
+      "pattern": "Context pass"
+    },
+    {
+      "id": "R26",
+      "name": "appositive ambiguity",
+      "pattern": "appositive"
+    },
+    {
+      "id": "R27",
+      "name": "vowel tiers",
+      "pattern": "Vowel tiers"
+    },
+    {
+      "id": "R28",
+      "name": "thirteen rhymes",
+      "pattern": "十三辙"
+    },
+    {
+      "id": "R29",
+      "name": "tone vs melody",
+      "pattern": "Tone vs melody"
+    },
+    {
+      "id": "R30",
+      "name": "decision card template",
+      "pattern": "决策\\s+N/T"
+    },
+    {
+      "id": "R31",
+      "name": "proofreading table columns",
+      "pattern": "\\| # \\| 原文句子 \\| 现译 \\| 字数 \\| 状态 \\| 原因 \\|"
+    },
+    {
+      "id": "R32",
+      "name": "variant comparison template",
+      "pattern": "\\| 方案 \\| 字数 \\| 长强拍落字"
+    },
+    {
+      "id": "R33",
+      "name": "final template",
+      "pattern": "🎵"
+    },
+    {
+      "id": "R34",
+      "name": "tiny example",
+      "pattern": "Tiny example"
+    },
+    {
+      "id": "R35",
+      "name": "modes Strict/Adaptive/Recomposition",
+      "pattern": "Strict.*Adaptive.*Recomposition"
+    },
+    {
+      "id": "R36",
+      "name": "adaptive is not authorization",
+      "pattern": "not authorization to adopt"
+    },
+    {
+      "id": "R37",
+      "name": "score first",
+      "pattern": "Score first"
+    },
+    {
+      "id": "R38",
+      "name": "decision ledger",
+      "pattern": "Decision ledger"
+    },
+    {
+      "id": "R39",
+      "name": "M0-M4 gates",
+      "pattern": "M0.*?M1.*?M2.*?M3.*?M4"
+    },
+    {
+      "id": "R40",
+      "name": "native Chinese pass",
+      "pattern": "Native Chinese pass"
+    },
+    {
+      "id": "R41",
+      "name": "deep review on demand only",
+      "pattern": "on demand only"
+    },
+    {
+      "id": "R42",
+      "name": "no performed validation without sing-through",
+      "pattern": "未经试唱验证"
+    },
+    {
+      "id": "R43",
+      "name": "pre-delivery self-check",
+      "pattern": "Pre-delivery self-check"
+    },
+    {
+      "id": "R44",
+      "name": "version stamp",
+      "pattern": "Version:\\s*\\d+\\.\\d+\\.\\d+\\s*\\(released\\s*\\d{4}-\\d{2}-\\d{2}\\)"
+    }
+  ]
+}

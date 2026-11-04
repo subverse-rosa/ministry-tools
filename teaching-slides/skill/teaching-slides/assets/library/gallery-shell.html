@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Teaching Slides · 视觉表达参考库</title>
+<style>
+:root{color-scheme:light;--ink:#292522;--muted:#706861;--paper:#faf8f4;--line:#ded8cf;--wine:#582828;--gold:#b0884a}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 "Noto Sans SC","Microsoft YaHei",sans-serif}button,input,select,textarea{font:inherit}button,a,input,select,textarea{outline-offset:4px}button{cursor:pointer}button:disabled{cursor:default;opacity:.5}a{color:var(--wine)}header,main,footer{max-width:1440px;margin:auto;padding:32px 42px}header{padding-top:56px;padding-bottom:24px;border-bottom:1px solid var(--line)}.eyebrow{font:14px Georgia,serif;letter-spacing:.16em;color:var(--wine)}h1{font-size:clamp(28px,4vw,48px);line-height:1.2;margin:18px 0}header p{max-width:790px;color:var(--muted);margin:12px 0}nav{display:flex;gap:10px;align-items:center;margin-top:24px;flex-wrap:wrap}.tag{font-size:13px;color:var(--muted);border-left:2px solid var(--gold);padding-left:10px;margin-right:12px}.toolbar{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px;margin-bottom:22px}label{display:block;font-size:14px;color:var(--muted)}input,select,textarea{width:100%;border:1px solid #b9b0a5;background:white;color:var(--ink);border-radius:3px;padding:10px 12px;margin-top:6px}.results{color:var(--muted);font-size:14px;margin:18px 0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px 24px}.card{border-bottom:1px solid var(--line);padding-bottom:24px}.preview{display:block;width:100%;border:1px solid var(--line);padding:0;background:white;overflow:hidden}.preview img{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;transition:transform .2s}.preview:hover img{transform:scale(1.025)}.card h2{font-size:20px;margin:15px 0 5px}.meta{font-size:13px;color:var(--wine)}.card p{font-size:14px;color:var(--muted);margin:10px 0}.open,.export,.primary{border:0;background:var(--wine);color:white;padding:9px 16px;border-radius:3px}.open{background:transparent;color:var(--wine);padding:0;text-decoration:underline;text-underline-offset:4px}.secondary{border:1px solid #b9b0a5;background:transparent;padding:8px 14px;border-radius:3px}.empty{padding:70px 0;text-align:center;color:var(--muted)}footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);margin-top:36px}dialog{width:min(1180px,95vw);max-height:94vh;padding:0;border:1px solid var(--line);background:var(--paper);color:var(--ink)}dialog::backdrop{background:#18130fd1}.dialog-head{display:flex;align-items:center;justify-content:space-between;padding:18px 26px;border-bottom:1px solid var(--line)}.dialog-head h2{font-size:22px;margin:0}.close{font-size:26px;border:0;background:none;padding:0 12px}.detail-preview{background:#e8e2d8}.detail-preview img{width:100%;display:block}.detail-body{padding:24px 30px;display:grid;grid-template-columns:1.3fr 1fr;gap:36px}.detail-body h3{font-size:15px;color:var(--wine);margin:20px 0 6px}.detail-body h3:first-child{margin-top:0}.detail-body p,.detail-body li{font-size:14px}.detail-body ul{padding-left:20px;margin:6px 0}.provenance{font-size:12px!important;color:var(--muted);overflow-wrap:anywhere}.feedback{border-left:1px solid var(--line);padding-left:30px}.feedback h3{font-size:19px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.feedback label{margin-bottom:12px}.feedback textarea{min-height:90px;resize:vertical}.feedback small{display:block;color:var(--muted);margin:12px 0}.notice{font-size:13px;color:var(--wine);min-height:24px}.gapnote{font-size:14px;color:var(--muted);margin-top:32px}.status{background:#eee8dc;padding:1px 7px;border-radius:2px;color:#655949}button:focus-visible,a:focus-visible{outline:3px solid var(--gold)}@media(max-width:1000px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){header,main,footer{padding:24px 20px}.toolbar,.grid,.detail-body{grid-template-columns:1fr}.feedback{padding-left:0;border-left:0;border-top:1px solid var(--line);padding-top:24px}.dialog-head{padding:14px}.detail-body{padding:20px}.form-row{grid-template-columns:1fr}h1{font-size:30px}}
+.example-controls{padding:18px 26px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line)}#example-tabs{display:flex;gap:8px;flex-wrap:wrap}.example-tab[aria-selected="true"]{background:var(--wine);color:white;border-color:var(--wine)}#compare-select-label{display:flex;align-items:center;gap:10px}#compare-select{margin:0;width:auto}.detail-preview figure{margin:0;min-width:0}.detail-preview figcaption{background:var(--paper);padding:8px 16px;color:var(--muted);font-size:13px}.detail-preview.comparing{display:grid;grid-template-columns:1fr 1fr;gap:1px}.checkbox-label{display:flex;gap:8px;align-items:center}.checkbox-label input{width:auto;margin:0}[hidden]{display:none!important}@media(max-width:650px){.detail-preview.comparing{grid-template-columns:1fr}.example-controls{padding:14px}#example-tabs{width:100%}}
+</style>
+<header>
+ <div class="eyebrow">TEACHING SLIDES · REFERENCE LIBRARY</div>
+ <h1>让内容找到合适的视觉表达</h1>
+ <p>从真实讲道与课程中提取的参考。先判断内容关系，再选择、组合或发展表达方式。这里的例子保留原页样貌，供比较与变化。</p>
+ <nav aria-label="参考库信息"><span class="tag" id="edition"></span><span class="tag" id="distribution-label"></span><button class="export" id="export" disabled>导出反馈（0）</button><span class="notice" id="storage-note" role="status"></span></nav>
+</header>
+<main>
+ <div class="toolbar">
+  <label>查找表达方式<input id="search" type="search" placeholder="例如：经文、比较、根基、逐步展开"></label>
+  <label>逻辑关系<select id="relation"><option value="">全部关系</option></select></label>
+  <label>使用状态<select id="lifecycle"><option value="">全部状态</option><option value="reference">参考素材</option><option value="tried">已有改编案例</option><option value="reusable">可复用经验</option><option value="retired">已退役</option></select></label>
+ </div>
+ <p class="results" id="results" aria-live="polite"></p><div class="grid" id="grid"></div>
+ <p class="gapnote" id="gaps"></p>
+</main>
+<footer>例库记录设计经验。文字与引文仍需按项目核对；预览检查、现场投影和教学使用是不同证据。反馈只有导出并导入项目后，才进入维护记录。</footer>
+<dialog id="detail" aria-labelledby="detail-title">
+ <div class="dialog-head"><h2 id="detail-title"></h2><button class="close" id="close" aria-label="关闭详情">×</button></div>
+ <div class="example-controls"><div id="example-tabs" role="tablist" aria-label="来源例子"></div><button type="button" class="secondary" id="compare-toggle" aria-pressed="false">并排比较</button><label id="compare-select-label" hidden>比较对象<select id="compare-select"></select></label></div>
+ <div class="detail-preview" id="preview-pair"><figure><img id="detail-image" alt="来源幻灯片完整预览"><figcaption id="main-caption"></figcaption></figure><figure id="compare-figure" hidden><img id="compare-image" alt="第二个来源页"><figcaption id="compare-caption"></figcaption></figure></div>
+ <div class="detail-body"><section id="detail-copy"></section>
+ <form class="feedback" id="feedback-form">
+  <h3>留下这次观察</h3><p id="feedback-example"></p><p>记录效果与原因，供后续判断适用范围。</p>
+  <label>项目编号<input id="project-name" autocomplete="off" required placeholder="与项目记录一致，例如 assurance-session5"></label>
+  <div class="form-row"><label>观察<select id="action"><option value="keep">值得保留</option><option value="change">建议调整</option><option value="reject">此处不适合</option></select></label><label>适用范围<select id="scope"><option value="project">本次项目</option><option value="page">这一页</option><option value="series">本系列</option><option value="library">参考库建议</option></select></label></div>
+  <label>具体对象<input id="target" required placeholder="填写页码、项目名或系列名"></label>
+  <label>对应输出编号（可选）<input id="output-version" placeholder="已登记的输出，例如 O1"></label>
+  <label class="checkbox-label"><input type="checkbox" id="delivery-blocking">不处理会影响本次交付</label>
+  <label>观察情境<select id="context"><option value="screen_review">屏幕查看</option><option value="native_powerpoint">在 PowerPoint 中检查</option><option value="live_projection">现场投影</option><option value="teaching_use">实际教学使用</option><option value="unspecified">尚未说明</option></select></label>
+  <label>效果与原因<textarea id="reason" required placeholder="例如：两段并列能看清区别，但英文在投影时偏小。"></textarea></label>
+  <button class="primary" type="submit">加入待导出反馈</button><p class="notice" id="feedback-note" role="status"></p>
+  <small>保存观察不会改变例库状态或未来默认规则。浏览器中的草稿请及时导出。</small>
+ </form></div>
+</dialog>
+<script type="application/json" id="catalog-data">__CATALOG_JSON__</script>
+<script type="application/json" id="preview-data">__PREVIEWS_JSON__</script>
+<script>
+__GALLERY_SCRIPT__
+</script>
+</html>

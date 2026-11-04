@@ -1,0 +1,337 @@
+{
+  "hook": {
+    "text": "晨光再临",
+    "valid": [
+      "晨光再临，路途清晰",
+      "晨光再临，云色渐淡",
+      "晨光再临，群山显现",
+      "晨光再临，百鸟苏醒",
+      "晨光再临，田野金黄",
+      "晨光再临，携手前行"
+    ],
+    "bad_segmentation": [
+      "我等晨光再临时分"
+    ],
+    "bad_parallel": [
+      "迎接晨光，路途清晰"
+    ]
+  },
+  "relations": [
+    {
+      "id": "negated",
+      "source": {
+        "agent": "Christ",
+        "patient": "narrator",
+        "speaker": "narrator",
+        "addressee": "Christ",
+        "negated": true,
+        "cause": "help",
+        "effect": "standing",
+        "modality": "possible",
+        "theological_claims": [
+          "refreshment"
+        ],
+        "discourse": "petition"
+      },
+      "valid": {
+        "agent": "Christ",
+        "patient": "narrator",
+        "speaker": "narrator",
+        "addressee": "Christ",
+        "negated": true,
+        "cause": "help",
+        "effect": "standing",
+        "modality": "possible",
+        "theological_claims": [
+          "refreshment"
+        ],
+        "discourse": "petition"
+      },
+      "invalid": {
+        "agent": "Christ",
+        "patient": "narrator",
+        "speaker": "narrator",
+        "addressee": "Christ",
+        "negated": false,
+        "cause": "help",
+        "effect": "standing",
+        "modality": "possible",
+        "theological_claims": [
+          "refreshment"
+        ],
+        "discourse": "petition"
+      }
+    },
+    {
+      "id": "agent",
+      "source": {
+        "agent": "Christ",
+        "patient": "narrator",
+        "speaker": "narrator",
+        "addressee": "Christ",
+        "negated": true,
+        "cause": "help",
+        "effect": "standing",
+        "modality": "possible",
+        "theological_claims": [
+          "refreshment"
+        ],
+        "discourse": "petition"
+      },
+      "valid": {
+        "agent": "Christ",
+        "patient": "narrator",
+        "speaker": "narrator",
+        "addressee": "Christ",
+        "negated": true,
+        "cause": "help",
+        "effect": "standing",
+        "modality": "possible",
+        "theological_claims": [
+          "refreshment"
+        ],
+        "discourse": "petition"
+      },
+      "invalid": {
+        "agent": "narrator",
+        "patient": "narrator",
+        "speaker": "narrator",
+        "addressee": "Christ",
+        "negated": true,
+        "cause": "help",
+        "effect": "standing",
+        "modality": "possible",
+        "theological_claims": [
+          "refreshment"
+        ],
+        "discourse": "petition"
+      }
+    },
+    {
+      "id": "speaker",
+      "source": {
+        "agent": "Christ",
+        "patient": "narrator",
+        "speaker": "narrator",
+        "addressee": "Christ",
+        "negated": true,
+        "cause": "help",
+        "effect": "standing",
+        "modality": "possible",
+        "theological_claims": [
+          "refreshment"
+        ],
+        "discourse": "petition"
+      },
+      "valid": {
+        "agent": "Christ",
+        "patient": "narrator",
+        "speaker": "narrator",
+        "addressee": "Christ",
+        "negated": true,
+        "cause": "help",
+        "effect": "standing",
+        "modality": "possible",
+        "theological_claims": [
+          "refreshment"
+        ],
+        "discourse": "petition"
+      },
+      "invalid": {
+        "agent": "Christ",
+        "patient": "narrator",
+        "speaker": "Christ",
+        "addressee": "Christ",
+        "negated": true,
+        "cause": "help",
+        "effect": "standing",
+        "modality": "possible",
+        "theological_claims": [
+          "refreshment"
+        ],
+        "discourse": "petition"
+      }
+    },
+    {
+      "id": "cause",
+      "source": {
+        "agent": "Christ",
+        "patient": "narrator",
+        "speaker": "narrator",
+        "addressee": "Christ",
+        "negated": true,
+        "cause": "help",
+        "effect": "standing",
+        "modality": "possible",
+        "theological_claims": [
+          "refreshment"
+        ],
+        "discourse": "petition"
+      },
+      "valid": {
+        "agent": "Christ",
+        "patient": "narrator",
+        "speaker": "narrator",
+        "addressee": "Christ",
+        "negated": true,
+        "cause": "help",
+        "effect": "standing",
+        "modality": "possible",
+        "theological_claims": [
+          "refreshment"
+        ],
+        "discourse": "petition"
+      },
+      "invalid": {
+        "agent": "Christ",
+        "patient": "narrator",
+        "speaker": "narrator",
+        "addressee": "Christ",
+        "negated": true,
+        "cause": "standing",
+        "effect": "standing",
+        "modality": "possible",
+        "theological_claims": [
+          "refreshment"
+        ],
+        "discourse": "petition"
+      }
+    },
+    {
+      "id": "modality",
+      "source": {
+        "agent": "Christ",
+        "patient": "narrator",
+        "speaker": "narrator",
+        "addressee": "Christ",
+        "negated": true,
+        "cause": "help",
+        "effect": "standing",
+        "modality": "possible",
+        "theological_claims": [
+          "refreshment"
+        ],
+        "discourse": "petition"
+      },
+      "valid": {
+        "agent": "Christ",
+        "patient": "narrator",
+        "speaker": "narrator",
+        "addressee": "Christ",
+        "negated": true,
+        "cause": "help",
+        "effect": "standing",
+        "modality": "possible",
+        "theological_claims": [
+          "refreshment"
+        ],
+        "discourse": "petition"
+      },
+      "invalid": {
+        "agent": "Christ",
+        "patient": "narrator",
+        "speaker": "narrator",
+        "addressee": "Christ",
+        "negated": true,
+        "cause": "help",
+        "effect": "standing",
+        "modality": "certain",
+        "theological_claims": [
+          "refreshment"
+        ],
+        "discourse": "petition"
+      }
+    },
+    {
+      "id": "theological_claims",
+      "source": {
+        "agent": "Christ",
+        "patient": "narrator",
+        "speaker": "narrator",
+        "addressee": "Christ",
+        "negated": true,
+        "cause": "help",
+        "effect": "standing",
+        "modality": "possible",
+        "theological_claims": [
+          "refreshment"
+        ],
+        "discourse": "petition"
+      },
+      "valid": {
+        "agent": "Christ",
+        "patient": "narrator",
+        "speaker": "narrator",
+        "addressee": "Christ",
+        "negated": true,
+        "cause": "help",
+        "effect": "standing",
+        "modality": "possible",
+        "theological_claims": [
+          "refreshment"
+        ],
+        "discourse": "petition"
+      },
+      "invalid": {
+        "agent": "Christ",
+        "patient": "narrator",
+        "speaker": "narrator",
+        "addressee": "Christ",
+        "negated": true,
+        "cause": "help",
+        "effect": "standing",
+        "modality": "possible",
+        "theological_claims": [
+          "regeneration"
+        ],
+        "discourse": "petition"
+      }
+    },
+    {
+      "id": "discourse",
+      "source": {
+        "agent": "Christ",
+        "patient": "narrator",
+        "speaker": "narrator",
+        "addressee": "Christ",
+        "negated": true,
+        "cause": "help",
+        "effect": "standing",
+        "modality": "possible",
+        "theological_claims": [
+          "refreshment"
+        ],
+        "discourse": "petition"
+      },
+      "valid": {
+        "agent": "Christ",
+        "patient": "narrator",
+        "speaker": "narrator",
+        "addressee": "Christ",
+        "negated": true,
+        "cause": "help",
+        "effect": "standing",
+        "modality": "possible",
+        "theological_claims": [
+          "refreshment"
+        ],
+        "discourse": "petition"
+      },
+      "invalid": {
+        "agent": "Christ",
+        "patient": "narrator",
+        "speaker": "narrator",
+        "addressee": "Christ",
+        "negated": true,
+        "cause": "help",
+        "effect": "standing",
+        "modality": "possible",
+        "theological_claims": [
+          "refreshment"
+        ],
+        "discourse": "narration"
+      }
+    }
+  ],
+  "provenance": "Invented public test fixture; annotations are supplied, not inferred by a model."
+}

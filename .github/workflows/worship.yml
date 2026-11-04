@@ -1,0 +1,51 @@
+name: Check Worship Slides and score handoff
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'worship-slides/**'
+      - 'singable-lyric-translator/skill/scripts/handoff.py'
+      - 'singable-lyric-translator/skill/scripts/engrave_score.py'
+      - 'singable-lyric-translator/skill/scripts/notation.py'
+      - '.github/workflows/worship.yml'
+  pull_request:
+    paths:
+      - 'worship-slides/**'
+      - 'singable-lyric-translator/skill/scripts/handoff.py'
+      - 'singable-lyric-translator/skill/scripts/engrave_score.py'
+      - 'singable-lyric-translator/skill/scripts/notation.py'
+      - '.github/workflows/worship.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  worship:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    defaults:
+      run:
+        working-directory: worship-slides
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: python scripts/selftest.py
+      - name: Export the approved sample and build a service deck
+        shell: bash
+        run: |
+          demo="$RUNNER_TEMP/worship-demo"
+          mkdir -p "$demo"
+          cp examples/handoff/morning-path.mei examples/handoff/service.yaml "$demo/"
+          python ../singable-lyric-translator/skill/scripts/handoff.py events "$demo/morning-path.mei" "$demo/morning-path.events.json"
+          python scripts/build_service.py "$demo/service.yaml" "$demo/service.pptx"
+          python scripts/check_delivery.py "$demo/service.yaml" "$demo/service.pptx"

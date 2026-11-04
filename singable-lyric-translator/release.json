@@ -1,0 +1,29 @@
+{
+  "name": "singable-lyric-translator",
+  "version": "1.9.0",
+  "release_date": "2026-10-28",
+  "runtime_files": [
+    "SKILL.md",
+    "references/candidate-review.md",
+    "references/capacity-example.json",
+    "references/chinese-prosody.md",
+    "references/native-lyric-craft.md",
+    "references/rhythmic-capacity.md",
+    "scripts/check_counts.py",
+    "scripts/check_rhythm.py",
+    "references/source-intake.md",
+    "references/score-production.md",
+    "references/score-profile.json",
+    "references/score-example.mei",
+    "scripts/notation.py",
+    "scripts/engrave_score.py",
+    "scripts/add_numbers.py",
+    "references/score-handoff.md",
+    "scripts/handoff.py"
+  ],
+  "profiles": {
+    "standard": "named-folder",
+    "gemini": "zip-root",
+    "standalone": "skill-md-only"
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "_note": "Colour profiles for the dark (sing / cover) slides. Fonts are bound to the export target, not the profile. Reading slides always use the fixed parchment block below. Song sizes: CN 60pt, EN 32pt bold-italic, jianpu digits 40pt.",
+  "fonts": {
+    "gslides": {
+      "zh": "Noto Serif SC",
+      "en": "Cormorant Garamond",
+      "en_italic": true
+    },
+    "pptx": {
+      "zh": "KaiTi",
+      "en": "Cambria",
+      "en_italic": true
+    }
+  },
+  "profiles": {
+    "rosa-teal": {
+      "label": "ROSA 深青 Teal Doctrine (default)",
+      "verse_bg": "#0E2A31",
+      "chorus_bg": "#193F47",
+      "zh": "#F4ECD8",
+      "en": "#C9C2A8",
+      "accent": "#D1AD62",
+      "name_zh": "深青",
+      "name_en": "Teal Doctrine",
+      "use": "ROSA 默认，冷静沉稳"
+    },
+    "rosa-parchment": {
+      "label": "ROSA 羊皮纸 Parchment Study",
+      "verse_bg": "#E4D8BF",
+      "chorus_bg": "#F2EAD9",
+      "zh": "#211F1A",
+      "en": "#5F513D",
+      "accent": "#9A6D26",
+      "service": false,
+      "_note": "light profile: lyric/jianpu slides only, not usable as a whole-service profile",
+      "name_zh": "羊皮纸",
+      "name_en": "Parchment",
+      "use": "浅色，只用于单独的歌词/简谱，不作整场色系"
+    },
+    "westminster-navy": {
+      "label": "ROSA 威斯敏斯特海军蓝 Westminster Navy",
+      "verse_bg": "#101D2C",
+      "chorus_bg": "#22354B",
+      "zh": "#F3ECDC",
+      "en": "#C2C5CB",
+      "accent": "#D0A166",
+      "name_zh": "威斯敏斯特海军蓝",
+      "name_en": "Westminster Navy",
+      "use": "信条主日、正式场合"
+    },
+    "covenant-green": {
+      "label": "ROSA 圣约深绿 Covenant Green",
+      "verse_bg": "#0E2118",
+      "chorus_bg": "#1E3B2B",
+      "zh": "#F1EAD8",
+      "en": "#C2CDB7",
+      "accent": "#CDB35F",
+      "name_zh": "圣约深绿",
+      "name_en": "Covenant Green",
+      "use": "平常期，安定扎根"
+    },
+    "oxblood-library": {
+      "label": "ROSA 酒红书房 Oxblood Library",
+      "verse_bg": "#2A1012",
+      "chorus_bg": "#5A2628",
+      "zh": "#F6EAD7",
+      "en": "#D1B8A6",
+      "accent": "#D6AD5D",
+      "bridge_bg": "#3A2216",
+      "cover_top": "#4B2021",
+      "name_zh": "酒红书房",
+      "name_en": "Oxblood Library",
+      "use": "温暖、厚重；平常主日皆宜，红色节期（圣灵降临）亦可用"
+    },
+    "advent-purple": {
+      "label": "ROSA 将临紫 Advent Purple",
+      "verse_bg": "#241631",
+      "chorus_bg": "#3B2550",
+      "bridge_bg": "#2E1D3A",
+      "zh": "#F3EBE0",
+      "en": "#CDBFD6",
+      "accent": "#D6AD5D",
+      "name_zh": "将临紫",
+      "name_en": "Advent Purple",
+      "use": "将临期、大斋期"
+    },
+    "navy-bilingual": {
+      "label": "深蓝双语 Navy bilingual",
+      "verse_bg": "#101829",
+      "chorus_bg": "#1B2C4F",
+      "zh": "#F2F6FB",
+      "en": "#9DC3D4",
+      "en_chorus": "#9DC3D4",
+      "accent": "#A9C2E8",
+      "accent_chorus": "#A9C2E8",
+      "name_zh": "深蓝双语",
+      "name_en": "Navy Bilingual",
+      "use": "最初的双语歌词规格，冷色现代"
+    }
+  },
+  "min_sizes": {
+    "_note": "floor for any projected text, from past church slides",
+    "pptx": {
+      "zh_kaiti": 36,
+      "en_cambria": 26
+    }
+  },
+  "section_types": {
+    "_note": "section → type; badge style per type",
+    "VERSE": {
+      "zh": "主歌",
+      "badge": "outline"
+    },
+    "CHORUS": {
+      "zh": "副歌",
+      "badge": "solid"
+    },
+    "BRIDGE": {
+      "zh": "桥段",
+      "badge": "soft"
+    },
+    "ENDING": {
+      "zh": "尾声",
+      "badge": "solid"
+    },
+    "TAG": {
+      "zh": "尾句",
+      "badge": "solid"
+    }
+  },
+  "reading": {
+    "_note": "读: fixed for every profile (dimmed parchment for LED panels)",
+    "bg": "#D7C7A9",
+    "ink": "#211F1A",
+    "num": "#5F513D"
+  },
+  "default_profile": "oxblood-library",
+  "palette_order": [
+    "oxblood-library",
+    "advent-purple",
+    "covenant-green",
+    "rosa-teal",
+    "westminster-navy",
+    "navy-bilingual"
+  ]
+}

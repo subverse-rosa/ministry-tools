@@ -1,0 +1,6 @@
+projects/
+dist/
+__pycache__/
+*.pyc
+.venv/
+*.tmp

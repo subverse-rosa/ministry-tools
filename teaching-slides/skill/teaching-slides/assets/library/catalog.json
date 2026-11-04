@@ -1,0 +1,568 @@
+{
+  "schema_version": 1,
+  "version": "0.2.0",
+  "updated": "2026-11-03",
+  "distribution": "public-preview",
+  "relationships": {
+    "comparison": "比较",
+    "evidence": "命题与证据",
+    "foundation": "根基与展开",
+    "sequence": "顺序与定位",
+    "causality": "因果",
+    "hierarchy": "层级与归类",
+    "correspondence": "对应",
+    "synthesis": "综合与聚焦",
+    "illustration": "图像与类比"
+  },
+  "sources": [
+    {
+      "id": "assurance-session5-full",
+      "title": "救恩的确据 · 第五堂 · 完整参考稿",
+      "filename": "《耶稣爱我，我凭什么知道？》 ——救赎之约：恩典之约的三一根基  full.pptx",
+      "sha256": "de32b6bd78f70d004d421570526720f735490257a6fd07e935d9d89704baa521",
+      "slide_count": 137,
+      "source_role": "visual reference; content authority unresolved",
+      "known_defects": [
+        {
+          "slide": 68,
+          "issue": "Major overflow and narrow-column export defect; excluded from examples."
+        },
+        {
+          "slide": 131,
+          "issue": "Missing character in Scripture quote; excluded from examples."
+        }
+      ],
+      "project_id": "assurance-session5"
+    }
+  ],
+  "patterns": [
+    {
+      "id": "paired-positions",
+      "title": "两种立场并列",
+      "relationships": [
+        "comparison"
+      ],
+      "status": "reference",
+      "intent": "两种立场各自得到完整陈述，便于听众识别共同议题与不同前提。",
+      "spatial_form": "同一内容区内上下排列两组中英段落，以间距区分。",
+      "adaptations": [
+        "可改为左右并列；按比较维度组织时可发展成表格。",
+        "可以保留非对称篇幅，让重要限定得到足够空间。"
+      ],
+      "caveats": [
+        "段落篇幅相近不代表论证分量相等。",
+        "避免把复杂立场压成未经限定的口号。"
+      ],
+      "examples": [
+        {
+          "source_id": "assurance-session5-full",
+          "slide": 8,
+          "preview": "previews/paired-positions.png",
+          "sha256": "80c3c12e87970f99862080246d0df85a4cd629b7295a0b47811a9c8814e70512",
+          "id": "assurance-session5-full:8"
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "native_powerpoint_export",
+          "label": "PowerPoint 原生导出",
+          "date": "2026-10-31"
+        },
+        {
+          "kind": "overview_visual_review",
+          "label": "来源页缩略图检查",
+          "date": "2026-10-31"
+        }
+      ],
+      "content_independently_verified": false,
+      "promotion_basis": null
+    },
+    {
+      "id": "numbered-argument",
+      "title": "编号论点",
+      "relationships": [
+        "hierarchy"
+      ],
+      "status": "reference",
+      "intent": "把一个论证的主要命题及其解释组织成可跟随的顺序。",
+      "spatial_form": "金色编号悬挂在正文左侧，中英解释成组排列。",
+      "adaptations": [
+        "可按段落逐页展开，或让一个重要论点独占一页。",
+        "编号可以表达列举，不必赋予因果或时间含义。"
+      ],
+      "caveats": [
+        "多点内容要按累计高度判断容量。",
+        "保留论点之间的限定关系。"
+      ],
+      "examples": [
+        {
+          "source_id": "assurance-session5-full",
+          "slide": 7,
+          "preview": "previews/numbered-argument.png",
+          "sha256": "1b42d8d68852a1c83391ec79c353b27f5d7ee885ff5f623af7af6d0f05256e56",
+          "id": "assurance-session5-full:7"
+        },
+        {
+          "id": "assurance-session5-full:84",
+          "source_id": "assurance-session5-full",
+          "slide": 84,
+          "label": "编号论点 · 另一种条目长度",
+          "note": "相同的悬挂编号结构，用于较长的两个论点。",
+          "preview": "previews/numbered-argument-variant.png",
+          "sha256": "242acb140dd6926da0faec110649b8a48f70302bfaf975655c1f789c234ddab9"
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "native_powerpoint_export",
+          "label": "PowerPoint 原生导出",
+          "date": "2026-10-31"
+        },
+        {
+          "kind": "overview_visual_review",
+          "label": "来源页缩略图检查",
+          "date": "2026-10-31"
+        }
+      ],
+      "content_independently_verified": false,
+      "promotion_basis": null
+    },
+    {
+      "id": "question-overview",
+      "title": "问题总览",
+      "relationships": [
+        "hierarchy"
+      ],
+      "status": "reference",
+      "intent": "先呈现待回应的问题，让后续逐项讲解有清楚的入口。",
+      "spatial_form": "网格中并列问题，编号连接后续展开页。",
+      "adaptations": [
+        "可按问题长度改成纵列或分组。",
+        "选择与实际听众相关的问题，不必固定四项。"
+      ],
+      "caveats": [
+        "网格表示并列归类，不自动表示四种内容同等重要。",
+        "本例密度与字号需要按新场景重新检查。"
+      ],
+      "examples": [
+        {
+          "source_id": "assurance-session5-full",
+          "slide": 28,
+          "preview": "previews/question-overview.png",
+          "sha256": "310bce3dfeed85da4d06f15419fd25152dc00d559d4e146b74f8d4560dae11ee",
+          "id": "assurance-session5-full:28"
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "native_powerpoint_export",
+          "label": "PowerPoint 原生导出",
+          "date": "2026-10-31"
+        },
+        {
+          "kind": "overview_visual_review",
+          "label": "来源页缩略图检查",
+          "date": "2026-10-31"
+        }
+      ],
+      "content_independently_verified": false,
+      "promotion_basis": null
+    },
+    {
+      "id": "scripture-focus",
+      "title": "经文聚焦",
+      "relationships": [
+        "evidence"
+      ],
+      "status": "reference",
+      "intent": "让一段经文成为当前论证的共同阅读依据。",
+      "spatial_form": "经文居中，中英配对，出处与书卷标签分层。",
+      "adaptations": [
+        "按语义分成续页，保持出处完整。",
+        "可以采用左对齐、逐句显示或突出一小段文字。"
+      ],
+      "caveats": [
+        "例1是连续引文的后半段，单独使用时应说明语境；例2呈现单节经文。",
+        "字体、译本与强调均需在新项目确认。"
+      ],
+      "examples": [
+        {
+          "source_id": "assurance-session5-full",
+          "slide": 11,
+          "preview": "previews/scripture-focus.png",
+          "sha256": "bface92ce76da54fddd9cbf0337dd56dc5d1f273b1590e76089fe246d922de34",
+          "id": "assurance-session5-full:11"
+        },
+        {
+          "id": "assurance-session5-full:78",
+          "source_id": "assurance-session5-full",
+          "slide": 78,
+          "label": "单节经文聚焦",
+          "note": "单节经文与英文伴随文本；可与例1的续页形式比较。",
+          "preview": "previews/scripture-focus-variant.png",
+          "sha256": "12a5301feaa013dda5b5a246730023bef52686f05f81643a6f93f757c2390af5"
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "native_powerpoint_export",
+          "label": "PowerPoint 原生导出",
+          "date": "2026-10-31"
+        },
+        {
+          "kind": "overview_visual_review",
+          "label": "来源页缩略图检查",
+          "date": "2026-10-31"
+        }
+      ],
+      "content_independently_verified": false,
+      "promotion_basis": null
+    },
+    {
+      "id": "attributed-quotation",
+      "title": "具名引文",
+      "relationships": [
+        "evidence"
+      ],
+      "status": "reference",
+      "intent": "清楚呈现一位作者的观点与归属。",
+      "spatial_form": "引文置于左侧细线范围内，作者署名位于下方。",
+      "adaptations": [
+        "可加入出处、页码或与讲员释义配对。",
+        "长引文可分段；完整引文与摘录采用不同标注。"
+      ],
+      "caveats": [
+        "来源页排版检查不等于已核实引文原文。",
+        "视觉处理应让引文与讲员自己的阐述有区别。"
+      ],
+      "examples": [
+        {
+          "source_id": "assurance-session5-full",
+          "slide": 23,
+          "preview": "previews/attributed-quotation.png",
+          "sha256": "e64cfa368f55f7b02e21a339077b4e5cc5b10f0f636f5def7f4488d3ef68c99c",
+          "id": "assurance-session5-full:23"
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "native_powerpoint_export",
+          "label": "PowerPoint 原生导出",
+          "date": "2026-10-31"
+        },
+        {
+          "kind": "overview_visual_review",
+          "label": "来源页缩略图检查",
+          "date": "2026-10-31"
+        }
+      ],
+      "content_independently_verified": false,
+      "promotion_basis": null
+    },
+    {
+      "id": "claim-with-passage",
+      "title": "论点与经文依据",
+      "relationships": [
+        "evidence",
+        "correspondence"
+      ],
+      "status": "reference",
+      "intent": "把一个阐述与所引用的经文放在同一阅读单元中。",
+      "spatial_form": "上方为解释，下方用浅色引文区呈现经文。",
+      "adaptations": [
+        "可发展为经文与释义左右对应，或先经文后解释。",
+        "不同证据可以逐页展开，保留主张的连续性。"
+      ],
+      "caveats": [
+        "说明经文如何支持命题，不能仅凭并置建立证明关系。",
+        "本例使用高亮强调，需区分作者标记与原文。"
+      ],
+      "examples": [
+        {
+          "source_id": "assurance-session5-full",
+          "slide": 32,
+          "preview": "previews/claim-with-passage.png",
+          "sha256": "cfba5bdf448a13c5259564a911db6c0fc2050a17752391a76c3ff4f479dabd4c",
+          "id": "assurance-session5-full:32"
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "native_powerpoint_export",
+          "label": "PowerPoint 原生导出",
+          "date": "2026-10-31"
+        },
+        {
+          "kind": "overview_visual_review",
+          "label": "来源页缩略图检查",
+          "date": "2026-10-31"
+        }
+      ],
+      "content_independently_verified": false,
+      "promotion_basis": null
+    },
+    {
+      "id": "section-orientation",
+      "title": "章节定位",
+      "relationships": [
+        "sequence"
+      ],
+      "status": "reference",
+      "intent": "在长讲解中帮助听众知道当前位于哪一部分。",
+      "spatial_form": "深色章节页配字母、标题及顶部全程导航。",
+      "adaptations": [
+        "可只保留章节标题；短讲道未必需要持续导航。",
+        "导航可按系列结构调整，不固定 A/B/C/D。"
+      ],
+      "caveats": [
+        "导航是教学顺序，不代表主题的时间或因果顺序。",
+        "标题行长与导航可读性需要独立检查。"
+      ],
+      "examples": [
+        {
+          "source_id": "assurance-session5-full",
+          "slide": 39,
+          "preview": "previews/section-orientation.png",
+          "sha256": "97a7904e988554ed9f2c734f80e440d4c500929cab5488166e48ab727e38b97c",
+          "id": "assurance-session5-full:39"
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "native_powerpoint_export",
+          "label": "PowerPoint 原生导出",
+          "date": "2026-10-31"
+        },
+        {
+          "kind": "overview_visual_review",
+          "label": "来源页缩略图检查",
+          "date": "2026-10-31"
+        }
+      ],
+      "content_independently_verified": false,
+      "promotion_basis": null
+    },
+    {
+      "id": "evidence-index",
+      "title": "经文证据索引",
+      "relationships": [
+        "evidence",
+        "hierarchy"
+      ],
+      "status": "reference",
+      "intent": "先展示多处依据的范围，供后续逐段解释或回顾。",
+      "spatial_form": "经文标签与简短释义成行，分成两列。",
+      "adaptations": [
+        "少量依据可改成大字纵列；复杂说明可拆成细讲页。",
+        "可按支持的主张分组，或与当前证据页形成对应。"
+      ],
+      "caveats": [
+        "这是密集索引参考，不是新场景的字号标准。",
+        "索引中的短语可能是释义，不应当作经文原句。"
+      ],
+      "examples": [
+        {
+          "source_id": "assurance-session5-full",
+          "slide": 56,
+          "preview": "previews/evidence-index.png",
+          "sha256": "66b39e4d10e222d7d38802fd02d1ad2dc04b25708a2ba3dea41fb7294f6e300f",
+          "id": "assurance-session5-full:56"
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "native_powerpoint_export",
+          "label": "PowerPoint 原生导出",
+          "date": "2026-10-31"
+        },
+        {
+          "kind": "overview_visual_review",
+          "label": "来源页缩略图检查",
+          "date": "2026-10-31"
+        }
+      ],
+      "content_independently_verified": false,
+      "promotion_basis": null
+    },
+    {
+      "id": "focused-statement",
+      "title": "聚焦陈述",
+      "relationships": [
+        "synthesis"
+      ],
+      "status": "reference",
+      "intent": "在论证的重要节点停留，让听众记住一个明确命题。",
+      "spatial_form": "主句与英文伴随文本集中呈现，周围保留留白；背景随具体例子变化。",
+      "adaptations": [
+        "可使用浅底、分行、关键词强调或简短结论。",
+        "同样形式可用于提出问题、承接转折或结束一个论证。"
+      ],
+      "caveats": [
+        "精简时保留重要限定。",
+        "句子中的列举不自动构成图表所暗示的结构。"
+      ],
+      "examples": [
+        {
+          "source_id": "assurance-session5-full",
+          "slide": 75,
+          "preview": "previews/focused-statement.png",
+          "sha256": "f33838a1cf0116a22309d1697bba09c2dedfd11be14c5c8fda4bd7b47bdd3913",
+          "id": "assurance-session5-full:75"
+        },
+        {
+          "id": "assurance-session5-full:98",
+          "source_id": "assurance-session5-full",
+          "slide": 98,
+          "label": "浅底聚焦陈述",
+          "note": "浅底上的简短主张，可比较背景、强调及留白的变化。",
+          "preview": "previews/focused-statement-variant.png",
+          "sha256": "4fdc5285b912ad15d85233f14f315ee38b6f2fe44cae8aa26d1ee216a40f97a3"
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "native_powerpoint_export",
+          "label": "PowerPoint 原生导出",
+          "date": "2026-10-31"
+        },
+        {
+          "kind": "overview_visual_review",
+          "label": "来源页缩略图检查",
+          "date": "2026-10-31"
+        }
+      ],
+      "content_independently_verified": false,
+      "promotion_basis": null
+    },
+    {
+      "id": "mirrored-correspondence",
+      "title": "镜像与对应",
+      "relationships": [
+        "correspondence"
+      ],
+      "status": "reference",
+      "intent": "将两组内容的对应关系讲清，并补充其共同原则。",
+      "spatial_form": "先陈述对应关系，下方解释共同维度。",
+      "adaptations": [
+        "关系需要时可发展成对齐的双栏或标注连线。",
+        "可以用共同维度作中轴，分别保留两侧的不同之处。"
+      ],
+      "caveats": [
+        "对应、相似与同一不是同一个意思。",
+        "连接线或对称形状需要有语义依据。"
+      ],
+      "examples": [
+        {
+          "source_id": "assurance-session5-full",
+          "slide": 103,
+          "preview": "previews/mirrored-correspondence.png",
+          "sha256": "26cacc4c6ffd1ffa812ddecce9072326354a0f80dd0c0d47551ea33706cf67db",
+          "id": "assurance-session5-full:103"
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "native_powerpoint_export",
+          "label": "PowerPoint 原生导出",
+          "date": "2026-10-31"
+        },
+        {
+          "kind": "overview_visual_review",
+          "label": "来源页缩略图检查",
+          "date": "2026-10-31"
+        }
+      ],
+      "content_independently_verified": false,
+      "promotion_basis": null
+    },
+    {
+      "id": "terms-comparison",
+      "title": "条件对照",
+      "relationships": [
+        "comparison",
+        "correspondence"
+      ],
+      "status": "reference",
+      "intent": "在相同的比较问题下呈现两种安排的条件与结果。",
+      "spatial_form": "两个带小标题的段落上下排列，以分隔线连接比较。",
+      "adaptations": [
+        "可按立约方、条件、结果组织为对照表。",
+        "篇幅较长时，可逐页说明后回到简明总览。"
+      ],
+      "caveats": [
+        "原页上下排列不代表前者导致后者。",
+        "保留各方角色与条件的差异，避免强求一一对称。"
+      ],
+      "examples": [
+        {
+          "source_id": "assurance-session5-full",
+          "slide": 104,
+          "preview": "previews/terms-comparison.png",
+          "sha256": "5667f4f1a844974e973522e3b38cb8d9c433a76d68ee09c5a925388e6a16840f",
+          "id": "assurance-session5-full:104"
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "native_powerpoint_export",
+          "label": "PowerPoint 原生导出",
+          "date": "2026-10-31"
+        },
+        {
+          "kind": "overview_visual_review",
+          "label": "来源页缩略图检查",
+          "date": "2026-10-31"
+        }
+      ],
+      "content_independently_verified": false,
+      "promotion_basis": null
+    },
+    {
+      "id": "verse-gloss-stack",
+      "title": "逐段经文与释义",
+      "relationships": [
+        "evidence",
+        "correspondence"
+      ],
+      "status": "reference",
+      "intent": "让听众看见相邻经文如何逐段支持当前解释。",
+      "spatial_form": "经文标签、中文经文与英文成组纵向排列。",
+      "adaptations": [
+        "可以逐段加释义，或分成经文页与解释页。",
+        "多处经文可按共同主题分组，而非依次塞入一页。"
+      ],
+      "caveats": [
+        "真实经文与讲员释义应有清楚标识。",
+        "续页、译本与引用范围需要核对。"
+      ],
+      "examples": [
+        {
+          "source_id": "assurance-session5-full",
+          "slide": 118,
+          "preview": "previews/verse-gloss-stack.png",
+          "sha256": "29c87b5960371afbdb4e49abaea5a00e3b9e55ce342b20dc4bc0039aa0c19883",
+          "id": "assurance-session5-full:118"
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "native_powerpoint_export",
+          "label": "PowerPoint 原生导出",
+          "date": "2026-10-31"
+        },
+        {
+          "kind": "overview_visual_review",
+          "label": "来源页缩略图检查",
+          "date": "2026-10-31"
+        }
+      ],
+      "content_independently_verified": false,
+      "promotion_basis": null
+    }
+  ],
+  "publication": {
+    "authorized_by": "content author",
+    "date": "2026-11-03",
+    "scope": "Bundled source-page previews and existing repository history."
+  }
+}

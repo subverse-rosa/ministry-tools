@@ -1,0 +1,5 @@
+# Song-only deck from an approved score handed over by the lyric translator (invented example song).
+# No church template needed: the deck is a plain 16:9 file in the chosen profile.
+profile: oxblood-library
+service:
+  - {type: jianpu, handoff: morning-path.events.json, score: morning-path.mei}

@@ -1,0 +1,64 @@
+name: Validate skill and build
+
+on:
+  pull_request:
+    paths:
+      - 'singable-lyric-translator/**'
+      - '.github/workflows/lyric.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'singable-lyric-translator/**'
+      - '.github/workflows/lyric.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Python checks (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    defaults:
+      run:
+        working-directory: singable-lyric-translator
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      - name: Validate and build outside the checkout
+        shell: bash
+        run: python -B -X utf8 tools/build_release.py --output-dir "${{ runner.temp }}/lyric-build"
+      - name: Confirm the checkout is unchanged
+        shell: bash
+        run: |
+          git diff --exit-code
+          test -z "$(git ls-files --others --exclude-standard)"
+  score-smoke:
+    name: Optional score renderers
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: singable-lyric-translator
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      - name: Install optional rendering dependencies
+        run: python -m pip install -r tools/score-requirements.txt
+      - name: Render invented examples through both paths
+        run: python -B -X utf8 tools/smoke_scores.py "${{ runner.temp }}/score-smoke"
+      - name: Confirm no source was modified
+        run: git diff --exit-code

@@ -1,0 +1,1152 @@
+{
+  "suite_version": "2.4.1",
+  "note": "Run behavioral inputs with the skill active; save actual replies, then python -X utf8 tests/run_checks.py E18 reply.txt. Auto checks do not prove semantic fidelity; review assert items separately. Public E18/E19 use invented lyrics. Cases are prompts, not completed behavioral evaluations.",
+  "tests": [
+    {
+      "id": "E01",
+      "name": "count_only_no_fake_melody_claims",
+      "level": "B",
+      "input": {
+        "english_lyrics": "Amazing grace, how sweet the sound\nThat saved a wretch like me\nI once was lost, but now am found\nWas blind, but now I see",
+        "syllable_slots": [
+          8,
+          6,
+          8,
+          6
+        ]
+      },
+      "assert": [
+        "Chinese lines have exactly 8,6,8,6 characters",
+        "labels 未验证旋律",
+        "makes no claim of tone-melody or high-note validation"
+      ],
+      "fail_if": [
+        "says high notes / 倒字 were checked"
+      ],
+      "auto": {
+        "slots": [
+          8,
+          6,
+          8,
+          6
+        ],
+        "must_contain": [
+          "未验证旋律"
+        ],
+        "must_not_contain": [
+          "倒字已检查",
+          "已验证旋律"
+        ]
+      }
+    },
+    {
+      "id": "E02",
+      "name": "text_only_is_provisional",
+      "level": "C",
+      "input": {
+        "english_lyrics": "Amazing grace, how sweet the sound\nThat saved a wretch like me\nI once was lost, but now am found\nWas blind, but now I see"
+      },
+      "assert": [
+        "shows estimated syllable counts",
+        "labels fit 临时/provisional",
+        "does not mention strong beats or sustained notes as facts",
+        "ends with one-line prompt to supply counts/melody"
+      ],
+      "fail_if": [
+        "invents a strong beat, a held note or a high note"
+      ],
+      "auto": {
+        "must_contain": [
+          "临时"
+        ],
+        "must_not_contain": [
+          "强拍上",
+          "高音处"
+        ]
+      }
+    },
+    {
+      "id": "E03",
+      "name": "melisma_slot_alignment",
+      "level": "A",
+      "input": {
+        "english_lyrics": "Let heaven sing",
+        "syllable_slots": [
+          4
+        ],
+        "melody_notes": [
+          "6 notes; slot 4 ('sing') is a melisma over 3 notes"
+        ]
+      },
+      "assert": [
+        "draft has 4 characters, not 6",
+        "mentions slot 4 spans several notes"
+      ],
+      "fail_if": [
+        "adds characters to fill the extra notes"
+      ],
+      "auto": {
+        "slots": [
+          4
+        ]
+      }
+    },
+    {
+      "id": "E04",
+      "name": "semantic_core_over_count_hack",
+      "level": "B",
+      "input": {
+        "english_lyrics": "Christ bore my sin",
+        "syllable_slots": [
+          4
+        ]
+      },
+      "assert": [
+        "4 characters",
+        "keeps the predicate 'bore' (担/背/承) and 'sin' (罪)",
+        "Keeps Christ as 基督; if a core-title substitution is unavoidable, disclose it in a P0 card rather than silently swapping to 主."
+      ],
+      "fail_if": [
+        "drops 罪 or the bearing verb"
+      ],
+      "auto": {
+        "slots": [
+          4
+        ],
+        "must_contain": [
+          "罪"
+        ]
+      }
+    },
+    {
+      "id": "E05",
+      "name": "chorus_rhyme_without_forced_chinese",
+      "level": "B",
+      "input": {
+        "english_lyrics": "[Chorus]\nHoly, holy, holy are You\nHeaven sings it, earth sings too\nWe lift our hands to You\nOur hearts are true",
+        "syllable_slots": [
+          8,
+          7,
+          6,
+          4
+        ]
+      },
+      "assert": [
+        "8,7,6,4 characters",
+        "chorus lines end in one coherent 辙 where natural",
+        "no clumsy wording introduced only for rhyme",
+        "if rhyme is sacrificed, no card is raised for it at Level B unless chorus-core"
+      ],
+      "fail_if": [
+        "ungrammatical or odd phrasing visibly caused by rhyme"
+      ],
+      "auto": {
+        "slots": [
+          8,
+          7,
+          6,
+          4
+        ]
+      }
+    },
+    {
+      "id": "E06",
+      "name": "tone_clash_real_signal",
+      "level": "A",
+      "input": {
+        "english_lyrics": "Praise the Lord",
+        "syllable_slots": [
+          3
+        ],
+        "melody_notes": [
+          "slot 3 ('Lord'): strong beat, long note, highest pitch, approached by upward leap"
+        ],
+        "chinese_draft": "赞美主"
+      },
+      "assert": [
+        "flags 主 (zhu3, 上声) on the sustained peak",
+        "offers fixes that KEEP 主 (re-order so 主 sits on a short/weak beat) or a card with both options"
+      ],
+      "fail_if": [
+        "silently replaces 主 with 神 or 君",
+        "does not flag"
+      ],
+      "auto": {
+        "must_contain": [
+          "主"
+        ],
+        "card": true,
+        "max_cards": 1
+      }
+    },
+    {
+      "id": "E07",
+      "name": "tone_clash_false_positive_filter",
+      "level": "A",
+      "input": {
+        "english_lyrics": "We all come here",
+        "syllable_slots": [
+          4
+        ],
+        "melody_notes": [
+          "fast verse, all short notes, no strong-beat long note, low range"
+        ],
+        "chinese_draft": "我们都来"
+      },
+      "assert": [
+        "no decision card",
+        "may state 「无需决策」"
+      ],
+      "fail_if": [
+        "raises a tone-clash card for harmless contour mismatch"
+      ],
+      "auto": {
+        "card": false
+      }
+    },
+    {
+      "id": "E08",
+      "name": "high_note_vowel_gate",
+      "level": "A",
+      "input": {
+        "english_lyrics": "I need You\nWho are you",
+        "syllable_slots": [
+          3,
+          3
+        ],
+        "melody_notes": [
+          "line 1 slot 3 ('You'): sustained, high, chorus peak",
+          "line 2: fast, low, weak beats"
+        ],
+        "chinese_draft": "需要你\n你是谁"
+      },
+      "assert": [
+        "flags line 1 ending 你 (一七, closed) on the high sustained note",
+        "does NOT flag 你 in line 2"
+      ],
+      "fail_if": [
+        "flags line 2",
+        "misses line 1"
+      ],
+      "auto": {
+        "card": true,
+        "max_cards": 1
+      }
+    },
+    {
+      "id": "E09",
+      "name": "repeat_consistency",
+      "level": "B",
+      "input": {
+        "english_lyrics": "[Chorus] (x2, same melody)\nHoly, holy, holy are You\nHeaven sings it, earth sings too",
+        "syllable_slots": [
+          8,
+          7
+        ]
+      },
+      "assert": [
+        "both chorus occurrences have identical Chinese"
+      ],
+      "fail_if": [
+        "second occurrence differs"
+      ]
+    },
+    {
+      "id": "E10",
+      "name": "theological_term_integrity",
+      "level": "B",
+      "input": {
+        "english_lyrics": "Holy Spirit, fill me\nSaviour, You are near",
+        "syllable_slots": [
+          6,
+          5
+        ]
+      },
+      "assert": [
+        "圣灵 kept (not 精神/灵魂)",
+        "English echo keeps spelling 'Saviour'",
+        "if count forces a loss, a card is raised instead of silent loss"
+      ],
+      "fail_if": [
+        "silently drops or secularises 圣灵 / Saviour title"
+      ],
+      "auto": {
+        "slots": [
+          6,
+          5
+        ],
+        "must_contain": [
+          "圣灵",
+          "Saviour"
+        ]
+      }
+    },
+    {
+      "id": "E11",
+      "name": "scope_negative_generic_rewrite",
+      "level": "C",
+      "input": {
+        "english_lyrics": "Please rewrite these lines in more poetic Chinese. Not for singing, no melody:\nThe sea is calm tonight\nThe moon is on the water"
+      },
+      "assert": [
+        "no decision cards",
+        "does not enforce syllable slots or input-level labels",
+        "just rewrites"
+      ],
+      "fail_if": [
+        "runs the strict melody-fitting workflow"
+      ],
+      "auto": {
+        "card": false,
+        "must_not_contain": [
+          "输入等级"
+        ]
+      }
+    },
+    {
+      "id": "E12",
+      "name": "rhyme_reference_correctness",
+      "level": "B",
+      "input": {
+        "question": "Which 辙 do 回 and 怀 belong to, and where does the final e go?"
+      },
+      "assert": [
+        "回 -> 灰堆 (ei/ui)",
+        "怀 -> 怀来 (ai/uai)",
+        "final e belongs to 梭波, not 乜斜",
+        "uses 一七, never 纤微"
+      ],
+      "fail_if": [
+        "says 灰堆 is ai/uai",
+        "uses 纤微 as a category name"
+      ],
+      "auto": {
+        "must_contain": [
+          "灰堆",
+          "怀来",
+          "梭波"
+        ],
+        "must_not_contain": [
+          "纤微辙"
+        ]
+      }
+    },
+    {
+      "id": "E13",
+      "name": "overflow_more_than_three_conflicts",
+      "level": "A",
+      "input": {
+        "english_lyrics": "You are the One I seek\nYour love has set me free\nYour light is all I see\nYour voice is calling me\nI lift my eyes to You\nMy soul is made anew\nYour mercy follows me\nForever I'll be Yours",
+        "syllable_slots": [
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "melody_notes": [
+          "every line ends on a sustained high note (chorus peak)"
+        ],
+        "chinese_draft": "你是我所寻觅\n你爱将我扶起\n你光照亮前路\n你的呼召不息\n我举目仰望你\n我心焕然更新\n你怜悯随我行\n我永远属于你"
+      },
+      "assert": [
+        "At most 3 cards; audit semantic fidelity before vowel issues.",
+        "Repair semantic drift in love has set me free before prioritising local vowel conflicts.",
+        "Resolve additional repairable conflicts faithfully and list them under 已自动处理; disclose unresolved P0 blockers.",
+        "Apply tie-break only within the same priority."
+      ],
+      "fail_if": [
+        "4 or more cards"
+      ],
+      "auto": {
+        "max_cards": 3
+      }
+    },
+    {
+      "id": "E14",
+      "name": "default_to_recommendation",
+      "level": "A",
+      "input": {
+        "context_from": "E06",
+        "follow_up": "好"
+      },
+      "assert": [
+        "after cards were shown, user replies 好 -> final export uses each card's 推荐 option",
+        "no further question"
+      ],
+      "fail_if": [
+        "asks the user to choose again"
+      ],
+      "auto": {
+        "must_contain": [
+          "主名扬"
+        ],
+        "card": false
+      }
+    },
+    {
+      "id": "E15",
+      "name": "audit_mode_user_draft",
+      "level": "A",
+      "input": {
+        "english_lyrics": "Praise the Lord",
+        "syllable_slots": [
+          3
+        ],
+        "chinese_draft": "赞美主"
+      },
+      "assert": [
+        "does not re-translate from scratch",
+        "reports only real conflicts"
+      ],
+      "fail_if": [
+        "outputs a brand-new unrelated draft"
+      ]
+    },
+    {
+      "id": "E16",
+      "name": "zh_to_en_out_of_scope",
+      "level": "C",
+      "input": {
+        "english_lyrics": "请把这句译成英文歌词：主恩够我用"
+      },
+      "assert": [
+        "Chinese tone/rhyme modules do not apply to English; semantic/structural integrity still applies.",
+        "Applies supplied slot-count fitting without invented melody."
+      ],
+      "fail_if": [
+        "claims 倒字 or 十三辙 checks on English output"
+      ]
+    },
+    {
+      "id": "E17",
+      "name": "audit_slot_mismatch_autofix",
+      "level": "B",
+      "input": {
+        "english_lyrics": "I need You",
+        "syllable_slots": [
+          3
+        ],
+        "chinese_draft": "我需要你"
+      },
+      "assert": [
+        "notices draft has 4 characters for 3 slots",
+        "fixes by dropping weak-beat subject 我 without a card",
+        "lists the change under 已自动处理",
+        "labels 未验证旋律"
+      ],
+      "fail_if": [
+        "raises a card for a harmless dropped subject",
+        "leaves 4 characters"
+      ],
+      "auto": {
+        "slots": [
+          3
+        ],
+        "must_contain": [
+          "未验证旋律",
+          "已自动处理"
+        ],
+        "card": false
+      }
+    },
+    {
+      "id": "E18",
+      "name": "repeated_hook_4_plus_4",
+      "level": "A",
+      "input": {
+        "english_lyrics": "When dawn returns, the road is clear\nWhen dawn returns, the clouds grow pale",
+        "syllable_slots": [
+          8,
+          8
+        ],
+        "melody_notes": [
+          "both lines: hook slots 1–4; continuation slots 5–8, same phrase"
+        ],
+        "provenance": "Invented public fixture; same 4+4 hook constraint as the local case."
+      },
+      "assert": [
+        "Preserve the returning-dawn image in one four-slot hook; distinct continuations occupy slots 5–8.",
+        "Do not add a subject at the cost of shifting a continuation."
+      ],
+      "auto": {
+        "slots": [
+          8,
+          8
+        ],
+        "must_contain": [],
+        "max_cards": 3
+      }
+    },
+    {
+      "id": "E19",
+      "name": "six_line_parallel_architecture",
+      "level": "B",
+      "input": {
+        "english_lyrics": "When dawn returns, the road is clear\nWhen dawn returns, the clouds grow pale\nWhen dawn returns, the hills appear\nWhen dawn returns, the birds awake\nWhen dawn returns, the fields shine gold\nWhen dawn returns, we walk ahead",
+        "syllable_slots": [
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ],
+        "provenance": "Invented public fixture; same 4+4 hook constraint as the local case."
+      },
+      "assert": [
+        "One consistent hook and parallel continuation frame across six lines; all six outcomes retained.",
+        "No claim of verified 4+4 melody from counts alone."
+      ],
+      "auto": {
+        "slots": [
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ],
+        "must_contain": [
+          "未验证旋律"
+        ],
+        "max_cards": 3
+      }
+    },
+    {
+      "id": "E20",
+      "name": "quotation_and_imperative",
+      "level": "B",
+      "input": {
+        "english_lyrics": "“Trust Me,” He says\n“Save me,” I plead",
+        "syllable_slots": [
+          6,
+          6
+        ],
+        "chinese_draft": "祂说我信靠祂\n祂向我求拯救"
+      },
+      "assert": [
+        "Restore direct command and petition, preserving distinct speakers/addressees.",
+        "Quotation marks alone do not cure reversed speech acts."
+      ],
+      "auto": {
+        "slots": [
+          6,
+          6
+        ],
+        "must_contain": [
+          "未验证旋律"
+        ],
+        "max_cards": 3
+      }
+    },
+    {
+      "id": "E21",
+      "name": "negation_reversal",
+      "level": "B",
+      "input": {
+        "english_lyrics": "He roars but cannot harm",
+        "syllable_slots": [
+          6
+        ],
+        "chinese_draft": "咆哮无人可挡"
+      },
+      "assert": [
+        "P0: repair inability to harm; do not offer the reversed claim as an option."
+      ],
+      "auto": {
+        "slots": [
+          6
+        ],
+        "must_contain": [
+          "未验证旋律"
+        ],
+        "max_cards": 3
+      }
+    },
+    {
+      "id": "E22",
+      "name": "speaker_reversal",
+      "level": "B",
+      "input": {
+        "english_lyrics": "“Rescue me,” I cry to Him",
+        "syllable_slots": [
+          8
+        ],
+        "chinese_draft": "「求祢救我」祂向我求"
+      },
+      "assert": [
+        "P0: the narrator petitions Him, not He petitions the narrator.",
+        "Keep 我 inside the quotation when needed for speaker clarity."
+      ],
+      "auto": {
+        "slots": [
+          8
+        ],
+        "must_contain": [
+          "未验证旋律"
+        ],
+        "max_cards": 3
+      }
+    },
+    {
+      "id": "E23",
+      "name": "theological_over_translation",
+      "level": "B",
+      "input": {
+        "english_lyrics": "My weary soul is refreshed",
+        "syllable_slots": [
+          6
+        ],
+        "chinese_draft": "灵魂重生得救"
+      },
+      "assert": [
+        "P0: restore refreshment; do not infer regeneration or salvation from devotional context."
+      ],
+      "auto": {
+        "slots": [
+          6
+        ],
+        "must_contain": [
+          "未验证旋律"
+        ],
+        "max_cards": 3
+      }
+    },
+    {
+      "id": "E24",
+      "name": "agent_patient_reversal",
+      "level": "B",
+      "input": {
+        "english_lyrics": "Christ carries me",
+        "syllable_slots": [
+          5
+        ],
+        "chinese_draft": "我背负基督啊"
+      },
+      "assert": [
+        "P0: Christ carries narrator, not vice versa; retain core referent."
+      ],
+      "auto": {
+        "slots": [
+          5
+        ],
+        "must_contain": [
+          "未验证旋律"
+        ],
+        "max_cards": 3
+      }
+    },
+    {
+      "id": "E25",
+      "name": "causation_and_modality",
+      "level": "B",
+      "input": {
+        "english_lyrics": "Because You help, I may stand",
+        "syllable_slots": [
+          8
+        ],
+        "chinese_draft": "因我站立祢必帮助"
+      },
+      "assert": [
+        "P0: help enables standing; do not reverse cause/result or turn may into certainty."
+      ],
+      "auto": {
+        "slots": [
+          8
+        ],
+        "must_contain": [
+          "未验证旋律"
+        ],
+        "max_cards": 3
+      }
+    },
+    {
+      "id": "E26",
+      "name": "strict_candidate_count_gate",
+      "level": "B",
+      "input": {
+        "english_lyrics": "(invented) We sing, we stand, we praise the Lord",
+        "syllable_slots": [
+          9
+        ],
+        "user_candidates": [
+          "我们歌唱我们站立赞美主",
+          "我们歌唱站立赞美主的名字永远",
+          "我们赞美主"
+        ],
+        "mode": "Strict"
+      },
+      "assert": [
+        "counts every candidate before judging",
+        "marks over/under candidates with the exact count, e.g. 12 for 9",
+        "does not evaluate the invalid candidates as written",
+        "offers the nearest valid version"
+      ],
+      "fail_if": [
+        "recommends a candidate whose count does not match 9"
+      ],
+      "auto": {
+        "must_contain": [
+          "✗"
+        ]
+      }
+    },
+    {
+      "id": "E27",
+      "name": "particle_on_long_strong_slot",
+      "level": "A",
+      "input": {
+        "english_lyrics": "(invented) Come and see the light",
+        "syllable_slots": [
+          6
+        ],
+        "melody": "slots 1-2 short weak, slot 3 short, slot 4 long strong (dotted quarter), slot 5 short, slot 6 long final",
+        "chinese_draft": "来看见的光明"
+      },
+      "assert": [
+        "builds or states the slot map",
+        "flags a function word 的 on the long strong slot 4 as P1",
+        "proposes a re-voice that puts a content word there",
+        "does not flag weak-slot particles"
+      ],
+      "fail_if": [
+        "claims the line is fine"
+      ],
+      "auto": {
+        "must_contain": [
+          "的"
+        ]
+      }
+    },
+    {
+      "id": "E28",
+      "name": "rest_splits_two_character_word",
+      "level": "A",
+      "input": {
+        "english_lyrics": "(invented) Jesus Christ, one Lord",
+        "syllable_slots": [
+          7
+        ],
+        "melody": "an eighth rest falls between slot 3 and slot 4; slots 1-3 are an anacrusis plus one long note",
+        "chinese_draft": "耶稣基督独一主"
+      },
+      "assert": [
+        "notices that the rest falls inside the two-character word 基督",
+        "tries a faithful re-voice first",
+        "if none exists, lists it as an optional 💡 note rather than a card"
+      ],
+      "fail_if": [
+        "ignores the rest position",
+        "drops 基督 to avoid the split"
+      ],
+      "auto": {
+        "must_contain": [
+          "基"
+        ],
+        "must_not_contain": [
+          "已无问题"
+        ]
+      }
+    },
+    {
+      "id": "E29",
+      "name": "audit_against_lyric_not_source_text",
+      "level": "A",
+      "input": {
+        "english_lyrics": "(public domain paraphrase) We believe in one God, the Father; we believe in one Lord, Jesus Christ",
+        "syllable_slots": [
+          9,
+          11
+        ],
+        "note": "The related creed also says 'judge the living and the dead' but this lyric does not.",
+        "chinese_draft": "我们信独一的神，天父\n我们信独一的主耶稣基督"
+      },
+      "assert": [
+        "does not flag the missing 'living and dead' clause as an omission",
+        "if it mentions it, says it is not in the lyric"
+      ],
+      "fail_if": [
+        "demands the clause be added because the creed has it"
+      ]
+    },
+    {
+      "id": "E30",
+      "name": "retract_overturned_flag",
+      "level": "A",
+      "input": {
+        "turn1": "audit flagged 掌管 as drifting from the creed's 创造",
+        "turn2": "the lyric actually says 'rules', not 'made'"
+      },
+      "assert": [
+        "opens the reply with an explicit retraction of the earlier flag",
+        "states the lyric is the reference"
+      ],
+      "fail_if": [
+        "silently changes position",
+        "defends the earlier flag"
+      ]
+    },
+    {
+      "id": "E31",
+      "name": "global_term_change_occurrence_table",
+      "level": "A",
+      "input": {
+        "request": "replace 天父 with 圣父 everywhere",
+        "occurrences": "verse 1 line 1 (F, strong), chorus line 1 (C, weak 8th, falling), bridge line 3 (top note, strong)"
+      },
+      "assert": [
+        "lists every occurrence with slot position, note and cost",
+        "names the worst occurrence",
+        "applies the change everywhere after the user's choice",
+        "until the user confirms, the change is not listed under 已自动处理"
+      ],
+      "fail_if": [
+        "changes only some occurrences",
+        "claims the song is already changed before the user chooses"
+      ]
+    },
+    {
+      "id": "E32",
+      "name": "proofreading_table_columns_and_layers",
+      "level": "B",
+      "input": {
+        "request": "proofread line by line in a table",
+        "draft": "清晨我向你歌唱\n你将盼望赐给我\n黑夜不能遮你光\n我心仍然仰望你\n你扶持我的脚步\n你引导我向前行\n我将希望寄于你\n你使忧伤变喜乐\n我们同声来赞美\n愿将荣耀归给你\n清晨我向你歌唱\n我心仍然仰望你",
+        "english_lyrics": "At dawn I sing to you\nYou give me hope\nNight cannot hide your light\nMy heart still looks to you\nYou steady my steps\nYou lead me onward\nI place my hope in you\nYou turn sorrow to joy\nTogether we give praise\nMay glory be yours\nAt dawn I sing to you\nMy heart still looks to you",
+        "syllable_slots": [
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7
+        ],
+        "note": "Invented count-only fixture; no melody evidence. Review actual issues, do not manufacture five conflicts."
+      },
+      "assert": [
+        "table columns are 原文句子, 现译, 字数, 状态, 原因",
+        "status legend uses ✅ 🔧 🎯 💡",
+        "at most 3 🎯 cards in the message",
+        "extra conflicts appear as 💡 or 已自动处理, not as extra cards",
+        "ends with a summary table and the pending choices",
+        "现译 column shows the user's own text unchanged; repairs appear in 原因 as 建议",
+        "prints the status legend"
+      ],
+      "fail_if": [
+        "more than 3 cards",
+        "rewrites more than the offending characters of a line"
+      ],
+      "auto": {
+        "must_contain": [
+          "原文句子",
+          "字数",
+          "状态"
+        ],
+        "max_cards": 3
+      }
+    },
+    {
+      "id": "E33",
+      "name": "word_order_is_lowest_priority",
+      "level": "A",
+      "input": {
+        "question": "Must a good translation keep the English word order?"
+      },
+      "assert": [
+        "answers no",
+        "treats semantic integrity and natural Chinese as validity gates, checks musical fit against evidence, and puts English word order last",
+        "no decision card"
+      ],
+      "fail_if": [
+        "says the word order must match"
+      ],
+      "auto": {
+        "card": false
+      }
+    },
+    {
+      "id": "E34",
+      "name": "context_pass_appositive_ambiguity",
+      "level": "A",
+      "input": {
+        "english_lyrics": "We believe in one God, the Father",
+        "syllable_slots": [
+          9
+        ],
+        "chinese_draft": "我们信独一神是天父",
+        "other_line_in_song": "祂也是万代的神 (the Son is also called God)",
+        "other_line_slots": 7
+      },
+      "assert": [
+        "notices that 神是天父 can read as God being only the Father",
+        "points out the tension with the line calling the Son God",
+        "offers an appositive reading with the same slot count",
+        "keeps the slot count at 9"
+      ],
+      "fail_if": [
+        "calls the line fine without comment"
+      ]
+    },
+    {
+      "id": "E35",
+      "name": "adaptive_one_extra_attack_needs_approval",
+      "level": "A",
+      "input": {
+        "english_lyrics": "We sing",
+        "chinese_draft": "同声唱",
+        "score_map": {
+          "source": "Invented reviewed map; bar 1, 4/4, quarter=72",
+          "notes": [
+            {
+              "pitch": "C4",
+              "start": 0,
+              "end": 1
+            },
+            {
+              "pitch": "D4",
+              "start": 1,
+              "end": 3
+            },
+            {
+              "rest": true,
+              "start": 3,
+              "end": 4
+            }
+          ],
+          "baseline_slots": [
+            {
+              "start": 0,
+              "end": 1
+            },
+            {
+              "start": 1,
+              "end": 3
+            }
+          ],
+          "hard_boundaries": [
+            0,
+            3,
+            4
+          ]
+        },
+        "request": "Compare Strict with Adaptive, then stop before adopting any change."
+      },
+      "assert": [
+        "separates 2 source syllables, 2 notes, 2 original attacks and 3 proposed Chinese attacks",
+        "proposes dividing the untied D4 half note into attacks at beat offsets 1 and 2, preserving pitch and phrase duration",
+        "assesses stress on 同 and 唱, available vowel sustain and the rest; labels music worth/feasibility provisional pending singing",
+        "records a proposed allocation, waits for explicit approval; Strict cannot adopt the 3-character line unchanged"
+      ],
+      "fail_if": [
+        "rejects the natural line solely because it exceeds English syllables",
+        "claims subdivision approved or sung"
+      ]
+    },
+    {
+      "id": "E36",
+      "name": "equal_counts_still_need_native_review",
+      "level": "B",
+      "input": {
+        "english_lyrics": "I place my hope in you",
+        "syllable_slots": [
+          6
+        ],
+        "candidates": [
+          "将我希望于你",
+          "我把盼望寄你",
+          "盼望全寄于你"
+        ]
+      },
+      "assert": [
+        "counts each candidate as 6 but flags unnatural syntax/collocation in the first two",
+        "can retain the natural creative paraphrase 盼望全寄于你 while preserving who hopes in whom",
+        "keeps melodic/tonal fit unverified without score evidence"
+      ],
+      "fail_if": [
+        "selects a calque merely because its count fits",
+        "changes the direction of trust"
+      ]
+    },
+    {
+      "id": "E37",
+      "name": "unreadable_score_is_not_capacity_evidence",
+      "level": "B",
+      "input": {
+        "english_lyrics": "We sing at dawn",
+        "score_description": "PDF not available in this test; note durations and pickup unreadable",
+        "request": "Give a provisional draft and explain the missing mapping evidence."
+      },
+      "assert": [
+        "labels note count, underlay onsets, pickup and adaptive capacity Unverified",
+        "may count English syllables separately; never treats that count as verified Chinese capacity"
+      ],
+      "fail_if": [
+        "invents bar numbers or durations",
+        "marks M1 passed"
+      ]
+    },
+    {
+      "id": "E38",
+      "name": "accepted_ledger_survives_revision",
+      "level": "B",
+      "input": {
+        "english_lyrics": "We praise you forever",
+        "chinese_draft": "我们永远赞美你",
+        "decision_ledger": [
+          {
+            "id": "T01",
+            "text": "我们永远赞美你",
+            "status": "accepted",
+            "decision_owner": "user",
+            "reason": "user explicitly confirmed this exact hook"
+          }
+        ],
+        "request": "Review the rest of the song; keep T01. No other lines are supplied."
+      },
+      "assert": [
+        "retains T01 exactly and records it as accepted",
+        "does not invent missing song text or silently reopen the approved hook"
+      ],
+      "fail_if": [
+        "rewrites T01 without an explicit superseding decision"
+      ]
+    },
+    {
+      "id": "E39",
+      "name": "standard_review_does_not_force_five_rounds",
+      "level": "B",
+      "input": {
+        "english_lyrics": "We praise you forever",
+        "chinese_draft": "我们永远赞美你",
+        "syllable_slots": [
+          7
+        ],
+        "request": "One standard review; Deep Review has not been requested."
+      },
+      "assert": [
+        "performs a targeted semantic/native/count/structure/accessibility review",
+        "may retain the already natural line unchanged; melodic and performance checks remain unverified"
+      ],
+      "fail_if": [
+        "automatically launches five full review rounds",
+        "rewrites only to demonstrate activity"
+      ]
+    },
+    {
+      "id": "E40",
+      "name": "text_checks_cannot_pass_actual_singing",
+      "level": "A",
+      "input": {
+        "english_lyrics": "We sing",
+        "chinese_draft": "齐唱",
+        "syllable_slots": [
+          2
+        ],
+        "evidence": "Only counts and a synthetic internally consistent map are supplied; no score image, audio or performer.",
+        "request": "Report acceptance honestly."
+      },
+      "assert": [
+        "reports exactly which text/map checks were done; real-score mapping and M4 are pending/not tested",
+        "does not convert helper validity or theoretical feasibility into an actual singing pass"
+      ],
+      "fail_if": [
+        "claims a singer trial or real-score verification"
+      ]
+    },
+    {
+      "id": "E41",
+      "name": "export_scope_requires_current_user_request",
+      "level": "B",
+      "input": {
+        "english_lyrics": "We sing",
+        "chinese_draft": "齐唱",
+        "syllable_slots": [
+          2
+        ],
+        "request": "Deliver lyrics and bilingual text only. A staff score and numeric notation may be requested later."
+      },
+      "assert": [
+        "delivers only authorized text",
+        "notes a later explicit engraving request can change scope without approving any new rhythm"
+      ],
+      "fail_if": [
+        "creates staff, numeric notation or timed subtitle files now"
+      ]
+    },
+    {
+      "id": "E42",
+      "name": "tie_and_slur_are_different",
+      "level": "A",
+      "input": {
+        "english_lyrics": "Sing",
+        "score_map": "Invented bar 1, 4/4: C4 quarter at offset 0 tied to C4 quarter at 1; rest offsets 2–4. One original lyric attack at 0.",
+        "candidate": "歌唱",
+        "request": "Can I place a new syllable on the second tied note in Adaptive?"
+      },
+      "assert": [
+        "distinguishes two written noteheads from one tied sound/lyric attack",
+        "does not approve breaking the tie under current Adaptive constraints; proposes text or asks for explicit recomposition scope if desired",
+        "does not confuse a tie with a melismatic slur"
+      ],
+      "fail_if": [
+        "calls two noteheads two freely available syllable positions"
+      ]
+    },
+    {
+      "id": "E43",
+      "name": "card_requires_two_eligible_options",
+      "level": "A",
+      "input": {
+        "english_lyrics": "(invented) We sing, we stand, we praise the Lord",
+        "syllable_slots": [
+          9
+        ],
+        "mode": "Strict",
+        "user_candidates": [
+          "我们歌唱我们站立赞美主",
+          "我们歌唱，站立，赞美主"
+        ]
+      },
+      "assert": [
+        "marks the 11-character candidate ✗ with its exact count",
+        "does not present the 11-character candidate as card option A",
+        "if a card appears, both options are 9-slot candidates"
+      ],
+      "fail_if": [
+        "a card whose option is a candidate the evidence cannot support"
+      ],
+      "auto": {
+        "must_contain": [
+          "✗"
+        ]
+      }
+    },
+    {
+      "id": "E44",
+      "name": "accepted_wording_not_reflagged",
+      "level": "B",
+      "input": {
+        "turn1": "user explicitly accepted the line 为这土地，为我们收成 after a discussion, recorded in the ledger as accepted",
+        "turn2": "asks for a full-section proofread"
+      },
+      "assert": [
+        "does not re-flag the accepted line as a decision card",
+        "may mention at most one 💡 note, only with new evidence"
+      ],
+      "fail_if": [
+        "silently changes the accepted line",
+        "re-opens it as a card without new evidence"
+      ]
+    }
+  ]
+}

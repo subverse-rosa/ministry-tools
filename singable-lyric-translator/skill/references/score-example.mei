@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="5.0">
+  <meiHead><fileDesc><titleStmt><title>Morning Path: invented test material</title></titleStmt><pubStmt><p>Example only; not singer-tested.</p></pubStmt></fileDesc></meiHead>
+  <music><body><mdiv><score>
+    <scoreDef meter.count="4" meter.unit="4" keysig="0"><staffGrp><staffDef n="1" lines="5" clef.shape="G" clef.line="2"/></staffGrp></scoreDef>
+    <section>
+      <measure n="1"><staff n="1"><layer n="1">
+        <note xml:id="n1" pname="c" oct="4" dur="4"><verse n="1"><syl>晨</syl></verse><verse n="2"><syl>Day</syl></verse></note>
+        <note xml:id="n2" pname="d" oct="4" dur="4"><verse n="1"><syl>光</syl></verse><verse n="2"><syl>light</syl></verse></note>
+        <note xml:id="n3" pname="e" oct="4" dur="4"><verse n="1"><syl>引</syl></verse><verse n="2"><syl>guides</syl></verse></note>
+        <note xml:id="n4" pname="f" oct="4" dur="4"><verse n="1"><syl>路</syl></verse><verse n="2"><syl>us</syl></verse></note>
+      </layer></staff></measure>
+      <measure n="2"><staff n="1"><layer n="1">
+        <note xml:id="n5" pname="g" oct="4" dur="2"><verse n="1"><syl con="u">同</syl></verse><verse n="2"><syl con="u">walk</syl></verse></note>
+        <note xml:id="n6" pname="g" oct="4" dur="4"/>
+        <rest xml:id="r1" dur="4"/>
+      </layer></staff><tie startid="#n5" endid="#n6"/></measure>
+      <measure n="3"><staff n="1"><layer n="1">
+        <note xml:id="n7" pname="a" oct="4" dur="4" dots="1"><verse n="1"><syl>向</syl></verse><verse n="2"><syl>on</syl></verse></note>
+        <note xml:id="n8" pname="b" oct="4" dur="8"><verse n="1"><syl>前</syl></verse><verse n="2"><syl>we</syl></verse></note>
+        <note xml:id="n9" pname="c" oct="5" dur="4"><verse n="1"><syl>行</syl></verse><verse n="2"><syl>go</syl></verse></note>
+        <rest xml:id="r2" dur="4"/>
+      </layer></staff></measure>
+      <measure n="4" right="end"><staff n="1"><layer n="1">
+        <note xml:id="n10" pname="c" oct="5" dur="1"><verse n="1"><syl>光</syl></verse><verse n="2"><syl>light</syl></verse></note>
+      </layer></staff></measure>
+    </section>
+  </score></mdiv></body></music>
+</mei>

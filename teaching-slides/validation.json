@@ -1,0 +1,49 @@
+{
+  "version": "0.2.0",
+  "date": "2026-11-03",
+  "skill_validator": "passed",
+  "helper_tests": {
+    "passed": 43,
+    "failed": 0,
+    "suites": [
+      "tests/test_workflow.py",
+      "tests/test_revision_delivery.py"
+    ]
+  },
+  "browser_checks": [
+    "12 patterns / 15 examples",
+    "filter/search/empty states",
+    "source-specific switching",
+    "drafts stay with their example",
+    "side-by-side comparison",
+    "version-bound feedback export",
+    "local persistence",
+    "mobile comparison/no horizontal overflow",
+    "single-example fallback",
+    "no script errors or network"
+  ],
+  "library": {
+    "patterns": 12,
+    "source_examples": 15,
+    "new_examples_are_original_source_previews": true
+  },
+  "feedback_round_trip": "Actual browser export imported into a synthetic project, bound to O1; deferred/applied dispositions retained; O2 required its own reviews; source revision blocked until disposition.",
+  "source_compatibility": "Existing v0.1 private project remains record-valid; actual reference PPTX/DOCX self-comparison returns zero changes.",
+  "review_test_scope": "Synthetic attestations exercise readiness logic; they do not claim a real new-deck content/visual review.",
+  "gallery_sha256": "56b9218fd125e40bfbddd2ac7d733ba678c374fc0580ccda59782766b502cd1e",
+  "private_evidence": "projects/_validation/2026-11-03-v0.2.0",
+  "not_tested": [
+    "Newly authored sermon deck through this skill",
+    "Editable pattern generation",
+    "Target-room projection",
+    "Actual teaching effectiveness",
+    "Independent theological/source quotation verification"
+  ],
+  "distribution": "public-preview",
+  "publication_authorization": "2026-11-03: author confirmed ownership and approved public distribution.",
+  "publication_checks": {
+    "helper_tests": 43,
+    "browser": "passed, including public-preview label",
+    "runtime_behavior_changes": "none; publication labels/documentation and package naming only"
+  }
+}

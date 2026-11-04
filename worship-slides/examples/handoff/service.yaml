@@ -1,0 +1,10 @@
+# Invented mini-service demonstrating a template-free build.
+profile: oxblood-library
+service:
+  - {type: cover, text: 开始祷告}
+  - type: reading
+    header: 启应示例
+    items:
+      - {role: 主席, text: 让我们同心祷告。}
+      - {role: 会众, text: 愿我们以感恩的心彼此服事。}
+  - {type: jianpu, handoff: morning-path.events.json, score: morning-path.mei}

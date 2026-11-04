@@ -1,0 +1,4 @@
+interface:
+  display_name: "Teaching Slides"
+  short_description: "讲道与课程投影：内容保留、视觉选择、参考图库和实操反馈"
+  default_prompt: "Use $teaching-slides to turn my manuscript into clear sermon or lecture slides, using the visual library as adaptable references."

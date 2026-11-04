@@ -1,0 +1,8 @@
+/_archive/
+/.local-backups/
+**/dist/
+**/__pycache__/
+**/.venv/
+*.py[cod]
+.DS_Store
+Thumbs.db

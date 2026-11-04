@@ -1,0 +1,8 @@
+{
+  "note": "Invented deterministic checker fixtures, not actual AI responses or semantic grades.",
+  "replays": [
+    {"case": "E17", "reply": "输入等级：B（未验证旋律）\n我需你\n已自动处理\n", "status": "AUTO_PASS"},
+    {"case": "E17", "reply": "输入等级：B（未验证旋律）\n我需你\n神\n已自动处理\n", "status": "AUTO_FAIL"},
+    {"case": "E29", "reply": "No completed semantic review is claimed.", "status": "MANUAL_REVIEW_REQUIRED"}
+  ]
+}

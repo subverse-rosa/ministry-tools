@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="5.0">
+  <meiHead>
+    <fileDesc>
+      <titleStmt>
+        <title xml:lang="zh">晨光小径</title>
+        <title xml:lang="en">Morning Path</title>
+      </titleStmt>
+      <pubStmt><availability><useRestrict>Invented public test material · not an approved translation</useRestrict></availability></pubStmt>
+    </fileDesc>
+    <extMeta>
+      <handoff xmlns="urn:singable-lyric-translator:handoff:1" lyric-version="0.3" lyric-status="text-approved"
+               tonic="C4" scale="major" octave-shift="0" key-label="1 = C　4/4"/>
+    </extMeta>
+  </meiHead>
+  <music><body><mdiv><score>
+    <scoreDef meter.count="4" meter.unit="4" keysig="0"><staffGrp><staffDef n="1" lines="5" clef.shape="G" clef.line="2"/></staffGrp></scoreDef>
+    <section>
+      <expansion xml:id="perf" type="performance" plist="#v1 #ch #v2 #ch"/>
+      <section xml:id="v1" label="Verse 1">
+        <measure n="1"><staff n="1"><layer n="1">
+          <note xml:id="a1" pname="c" oct="4" dur="4"><verse n="1"><syl>晨</syl></verse><verse n="2"><syl>Day</syl></verse></note>
+          <note xml:id="a2" pname="d" oct="4" dur="4"><verse n="1"><syl>光</syl></verse><verse n="2"><syl>light</syl></verse></note>
+          <note xml:id="a3" pname="e" oct="4" dur="2"><verse n="1"><syl>照</syl></verse><verse n="2"><syl>wakes</syl></verse></note>
+        </layer></staff></measure>
+        <measure n="2"><staff n="1"><layer n="1">
+          <note xml:id="a4" pname="g" oct="4" dur="2"><verse n="1"><syl>路</syl></verse><verse n="2"><syl>us</syl></verse></note>
+          <note xml:id="a5" pname="g" oct="4" dur="4"/>
+          <rest xml:id="a6" dur="4"/>
+        </layer></staff><tie startid="#a4" endid="#a5"/></measure>
+      </section>
+      <section xml:id="ch" label="Chorus">
+        <measure n="3"><staff n="1"><layer n="1">
+          <note xml:id="c1" pname="a" oct="4" dur="4" dots="1"><verse n="1"><syl con="u">同</syl></verse><verse n="2"><syl>Walk</syl></verse></note>
+          <note xml:id="c2" pname="g" oct="4" dur="8"><verse n="2"><syl>on</syl></verse></note>
+          <note xml:id="c3" pname="c" oct="5" dur="2"><verse n="1"><syl>行</syl></verse><verse n="2"><syl>home</syl></verse></note>
+        </layer></staff></measure>
+        <measure n="4" right="end"><staff n="1"><layer n="1">
+          <note xml:id="c4" pname="c" oct="5" dur="1"><verse n="1"><syl>歌</syl></verse><verse n="2"><syl>sing</syl></verse></note>
+        </layer></staff></measure>
+      </section>
+      <section xml:id="v2" label="Verse 2">
+        <measure n="5"><staff n="1"><layer n="1">
+          <note xml:id="b1" pname="c" oct="4" dur="4"><verse n="1"><syl>夜</syl></verse><verse n="2"><syl>Night</syl></verse></note>
+          <note xml:id="b2" pname="d" oct="4" dur="4"><verse n="1"><syl>深</syl></verse><verse n="2"><syl>falls</syl></verse></note>
+          <note xml:id="b3" pname="e" oct="4" dur="2"><verse n="1"><syl>星</syl></verse><verse n="2"><syl>stars</syl></verse></note>
+        </layer></staff></measure>
+        <measure n="6"><staff n="1"><layer n="1">
+          <note xml:id="b4" pname="g" oct="4" dur="2"><verse n="1"><syl>明</syl></verse><verse n="2"><syl>shine</syl></verse></note>
+          <note xml:id="b5" pname="g" oct="4" dur="4"/>
+          <rest xml:id="b6" dur="4"/>
+        </layer></staff><tie startid="#b4" endid="#b5"/></measure>
+      </section>
+    </section>
+  </score></mdiv></body></music>
+</mei>

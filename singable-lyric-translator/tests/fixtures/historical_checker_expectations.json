@@ -1,0 +1,11 @@
+{
+  "note": "Expected checker statuses under v1.7.1, not grades of historical or current model quality. E03/E04 contain unmarked Chinese explanatory prose, now conservatively counted instead of silently truncating extra lines. Their AUTO_FAIL requires manual extraction/review. Original history remains unchanged.",
+  "statuses": {
+    "E01": "AUTO_PASS", "E02": "AUTO_PASS", "E03": "AUTO_FAIL",
+    "E04": "AUTO_FAIL", "E05": "AUTO_PASS", "E06": "AUTO_PASS",
+    "E07": "AUTO_PASS", "E08": "AUTO_PASS", "E09": "MANUAL_REVIEW_REQUIRED",
+    "E10": "AUTO_PASS", "E11": "AUTO_PASS", "E12": "AUTO_PASS",
+    "E13": "AUTO_PASS", "E14": "AUTO_PASS", "E15": "MANUAL_REVIEW_REQUIRED",
+    "E16": "MANUAL_REVIEW_REQUIRED", "E17": "AUTO_PASS"
+  }
+}

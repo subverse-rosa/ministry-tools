@@ -1,0 +1,31 @@
+name: Check skill and package
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'teaching-slides/**'
+      - '.github/workflows/teaching.yml'
+  pull_request:
+    paths:
+      - 'teaching-slides/**'
+      - '.github/workflows/teaching.yml'
+  workflow_dispatch:
+jobs:
+  check:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    env:
+      PYTHONUTF8: "1"
+      PYTHONDONTWRITEBYTECODE: "1"
+    defaults:
+      run:
+        working-directory: teaching-slides
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m unittest discover -s tests -v
+      - run: python tools/release.py build

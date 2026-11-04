@@ -1,0 +1,11 @@
+{
+  "name": "teaching-slides",
+  "version": "0.2.0",
+  "date": "2026-11-03",
+  "distribution": "public-preview",
+  "source": "skill/teaching-slides",
+  "validation_scope": "Synthetic revision/feedback/delivery behavior, source-derived multi-example gallery and browser checks; no new sermon deck or field-use validation.",
+  "package_name": "teaching-slides_v0.2.0.zip",
+  "repository": "https://github.com/subverse-rosa/ministry-tools/tree/main/teaching-slides",
+  "publication_authorization": "2026-11-03: author confirmed ownership and approved publishing the included content."
+}

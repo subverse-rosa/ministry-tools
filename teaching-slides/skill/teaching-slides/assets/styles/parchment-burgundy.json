@@ -1,0 +1,37 @@
+{
+  "id": "parchment-burgundy",
+  "label": "羊皮纸与酒红",
+  "status": "optional-starting-style",
+  "source": "DECK-DESIGN.md; source-specific rules separated from reusable style",
+  "canvas": {
+    "width_css_px": 1920,
+    "height_css_px": 1080,
+    "reference_width_in": 20,
+    "reference_height_in": 11.25,
+    "css_px_to_pt": 0.75
+  },
+  "colors": {
+    "background": "#F4EEE2",
+    "dark_background": "#582828",
+    "scripture_background": "#EFE7D6",
+    "body": "#2B2622",
+    "english": "#6F5C45",
+    "accent": "#CDA24A",
+    "light": "#F4EEE2"
+  },
+  "fonts": {
+    "chinese": "Noto Sans SC",
+    "english": "Georgia",
+    "english_italic": true,
+    "status": "proposed-from-design-document; source PPTX actually declares Arial and Georgia; not retroactively applied to previews",
+    "fallback_policy": "choose an available CJK font explicitly and check the export"
+  },
+  "starting_scale_css_px": {
+    "body_zh": 48,
+    "body_en": 36,
+    "slide_heading": 64,
+    "section_heading": 78,
+    "context_label": 28
+  },
+  "scope": "Opt-in per project; sizes are starting values for the viewing context, not global hard limits. Worship fonts remain independent."
+}
