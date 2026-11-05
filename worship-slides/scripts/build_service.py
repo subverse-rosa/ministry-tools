@@ -21,7 +21,7 @@ sys.path.insert(0, HERE)
 import songs
 from songs import STYLES, import_slides, jianpu_slides, styled_lyric_slides, song_from_handoff
 
-VERSION = "0.4.1"
+VERSION = "0.4.2"
 
 ap = argparse.ArgumentParser()
 ap.add_argument("service"); ap.add_argument("out")

@@ -2,7 +2,7 @@
 name: teaching-slides
 description: Create, adapt or review sermon and lecture slides from manuscripts, outlines and reference decks. Preserve the author's argument, find useful visual relationships, and use an adaptable reference library with scoped feedback. Use for 讲道PPT、课程投影、神学讲座 and teaching-slide design; worship service assembly, congregational readings and song notation belong to worship-slides.
 metadata:
-  version: 0.2.0
+  version: 0.2.1
 ---
 
 # Teaching Slides

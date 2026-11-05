@@ -76,7 +76,6 @@ function renderDetail(){
   section(area,'当前例子的来源',`${source.title} · 第 ${ex.slide} 页 · ${labels[active.status]}`);
   if(ex.note)section(area,'这个例子的变化',ex.note);
   area.append(el('p',`已做：${active.evidence.map(e=>e.label).join('；')}。证据仅表示所列检查；实际使用效果以项目反馈记录为准。`));
-  area.append(el('p',`来源 SHA-256：${source.sha256}`,'provenance'));
   $('feedback-example').textContent='观察对象：'+exampleLabel(ex,currentIndex);
 }
 function openDetail(pattern){

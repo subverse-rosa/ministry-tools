@@ -1,6 +1,6 @@
 {
-  "version": "0.2.0",
-  "date": "2026-11-03",
+  "version": "0.2.1",
+  "date": "2026-11-06",
   "skill_validator": "passed",
   "helper_tests": {
     "passed": 43,
@@ -28,10 +28,9 @@
     "new_examples_are_original_source_previews": true
   },
   "feedback_round_trip": "Actual browser export imported into a synthetic project, bound to O1; deferred/applied dispositions retained; O2 required its own reviews; source revision blocked until disposition.",
-  "source_compatibility": "Existing v0.1 private project remains record-valid; actual reference PPTX/DOCX self-comparison returns zero changes.",
+  "source_compatibility": "Existing project records remained valid. Reference PPTX and DOCX self-comparisons reported zero changes.",
   "review_test_scope": "Synthetic attestations exercise readiness logic; they do not claim a real new-deck content/visual review.",
-  "gallery_sha256": "56b9218fd125e40bfbddd2ac7d733ba678c374fc0580ccda59782766b502cd1e",
-  "private_evidence": "projects/_validation/2026-11-03-v0.2.0",
+  "gallery_sha256": "ab4df1aad3c4faa525c5332fbd0e3683d9978e04eb5d45cfc060a1fe92796305",
   "not_tested": [
     "Newly authored sermon deck through this skill",
     "Editable pattern generation",
@@ -44,6 +43,6 @@
   "publication_checks": {
     "helper_tests": 43,
     "browser": "passed, including public-preview label",
-    "runtime_behavior_changes": "none; publication labels/documentation and package naming only"
+    "runtime_behavior_changes": "Public catalog metadata and gallery provenance display only; project workflows unchanged"
   }
 }

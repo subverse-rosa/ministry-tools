@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "version": "0.2.0",
-  "updated": "2026-11-03",
+  "version": "0.2.1",
+  "updated": "2026-11-06",
   "distribution": "public-preview",
   "relationships": {
     "comparison": "比较",
@@ -17,22 +17,7 @@
   "sources": [
     {
       "id": "assurance-session5-full",
-      "title": "救恩的确据 · 第五堂 · 完整参考稿",
-      "filename": "《耶稣爱我，我凭什么知道？》 ——救赎之约：恩典之约的三一根基  full.pptx",
-      "sha256": "de32b6bd78f70d004d421570526720f735490257a6fd07e935d9d89704baa521",
-      "slide_count": 137,
-      "source_role": "visual reference; content authority unresolved",
-      "known_defects": [
-        {
-          "slide": 68,
-          "issue": "Major overflow and narrow-column export defect; excluded from examples."
-        },
-        {
-          "slide": 131,
-          "issue": "Missing character in Scripture quote; excluded from examples."
-        }
-      ],
-      "project_id": "assurance-session5"
+      "title": "救恩的确据 · 第五堂"
     }
   ],
   "patterns": [

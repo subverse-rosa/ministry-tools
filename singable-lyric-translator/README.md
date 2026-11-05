@@ -9,9 +9,10 @@ repeated hooks and song structure. A companion project to
 ## Package
 
 - Current version and package date: [release.json](release.json).
-- [Historical releases](https://github.com/subverse-rosa/singable-lyric-translator/releases/latest)
-- [Download package](singable-lyric-translator_latest.zip)
-- [SHA-256 checksum](SHA256.txt)
+- [v1.9.0 release](https://github.com/subverse-rosa/ministry-tools/releases/tag/singable-lyric-translator-v1.9.0)
+- [Historical releases](https://github.com/subverse-rosa/singable-lyric-translator/releases)
+- [Download package](https://github.com/subverse-rosa/ministry-tools/releases/download/singable-lyric-translator-v1.9.0/singable-lyric-translator_latest.zip)
+- [SHA-256 checksum](https://github.com/subverse-rosa/ministry-tools/releases/download/singable-lyric-translator-v1.9.0/SHA256.txt)
 - [Read the skill instructions](skill/SKILL.md)
 
 The ZIP contains the runtime files listed in `release.json`, sourced from

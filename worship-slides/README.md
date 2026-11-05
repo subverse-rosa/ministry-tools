@@ -2,8 +2,8 @@
 
 Agent Skill（SKILL.md 标准格式），Claude、Codex 等能读 skill、能跑 shell 的 agent 都可以用。
 
-从 [v0.4.1 发布页](https://github.com/subverse-rosa/ministry-tools/releases/tag/worship-slides-v0.4.1)
-下载 `worship-slides_v0.4.1.zip`，解压得到一个 `worship-slides/` 文件夹。校验值见同一页的 `SHA256.txt`。
+从 [v0.4.2 发布页](https://github.com/subverse-rosa/ministry-tools/releases/tag/worship-slides-v0.4.2)
+下载 `worship-slides_v0.4.2.zip`，解压得到一个 `worship-slides/` 文件夹。校验值见同一页的 `SHA256.txt`。
 
 安装：把整个 `worship-slides/` 文件夹放进该 agent 的 skills 目录（路径以各工具文档为准），例如
 - Claude Code：`~/.claude/skills/worship-slides/`（或项目里的 `.claude/skills/`）
@@ -19,7 +19,7 @@ Agent Skill（SKILL.md 标准格式），Claude、Codex 等能读 skill、能跑
 - `examples/handoff/` 从歌词翻译 skill 交接的示例歌（自编），`scripts/selftest.py` 用它自测
 - `scripts/check_library.py` 诗歌库检查：哪些 PPT 过期、被手改
 
-## 本地验证与打包
+## 试跑示例
 
 在本目录运行以下命令，可验证交接流程并生成合成示例。
 
@@ -28,11 +28,3 @@ python scripts/selftest.py
 python scripts/build_service.py examples/handoff/service.yaml demo.pptx
 python scripts/check_delivery.py examples/handoff/service.yaml demo.pptx
 ```
-
-从合仓根目录运行以下命令，生成只含 Worship Slides 的安装包。
-
-```sh
-git archive --format=zip --prefix=worship-slides/ -o ../worship-slides.zip HEAD:worship-slides
-```
-
-正式发版时把 HEAD 换成对应的 Worship Slides 版本标签。归档和版本命名见[仓库首页](../README.md)。

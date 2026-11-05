@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.2 — 2026-11-06
+- Use a generic template example and a shorter installation guide.
+- Keep repository maintenance files out of the skill ZIP.
+
 ## 0.4.1 — 2026-11-05
 - First public installable release from Ministry Tools.
 - Bundle a runnable sample service, score handoff and palette previews with invented material.
@@ -30,10 +34,10 @@
 - `check_library.py`: reports every song deck as current / STALE / EXPORT-OLD / EDITED / MISSING.
 - `template` is optional: song-only decks are plain 16:9 files (≈40 KB instead of ≈2.4 MB).
 - `selftest.py` with an invented example song; `references/song-library.md` folder convention.
-- PDF-extracted songs unchanged (verified: The God We Love gives the same 26 slides).
+- Regression-checked slide output for PDF-extracted songs.
 
 ## 0.2.1 — 2026-10-28
-- Per-step `transition: cut | fade` override; 阿们颂 now cuts in the example service.
+- Per-step `transition: cut | fade` override.
 - LED panel check accepted (provisional); design rules updated.
 
 ## 0.2.0 — 2026-10-26
@@ -42,4 +46,4 @@
 
 ## 0.1.0 — 2026-10-22
 - First version: whole-service builder (service.yaml → pptx), reading auto-pack, jianpu extraction,
-  hymn import, 7 colour profiles, palette page, 2026-10-25 example.
+  hymn import, seven colour profiles and a palette page.

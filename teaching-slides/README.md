@@ -2,16 +2,16 @@
 
 Run development commands from this directory. See the [Ministry Tools index](../README.md) for new release tags and companion skills.
 
-Public v0.2.0 preview for sermon and lecture slides. Uses the host's presentation tools and adds
+Public v0.2.1 preview for sermon and lecture slides. Uses the host's presentation tools and adds
 source preservation, visual decisions, offline reference gallery, scoped feedback and durable
 project records. See [Worship Slides](../worship-slides/) for service and song assembly.
 
 ## Download and install
 
-- [v0.2.0 preview release](https://github.com/subverse-rosa/teaching-slides/releases/tag/v0.2.0)
-- [Installable skill ZIP](https://github.com/subverse-rosa/teaching-slides/releases/download/v0.2.0/teaching-slides_v0.2.0.zip)
-- [Offline visual library](https://github.com/subverse-rosa/teaching-slides/releases/download/v0.2.0/visual-library.html)
-- [Checksums](https://github.com/subverse-rosa/teaching-slides/releases/download/v0.2.0/SHA256.txt)
+- [v0.2.1 preview release](https://github.com/subverse-rosa/ministry-tools/releases/tag/teaching-slides-v0.2.1)
+- [Installable skill ZIP](https://github.com/subverse-rosa/ministry-tools/releases/download/teaching-slides-v0.2.1/teaching-slides_v0.2.1.zip)
+- [Offline visual library](https://github.com/subverse-rosa/ministry-tools/releases/download/teaching-slides-v0.2.1/visual-library.html)
+- [Checksums](https://github.com/subverse-rosa/ministry-tools/releases/download/teaching-slides-v0.2.1/SHA256.txt)
 
 The ZIP contains one `teaching-slides/` folder. Keep its instructions, references, scripts
 and assets together and follow the host's skill installation procedure. GitHub's automatic

@@ -2,7 +2,7 @@
 name: worship-slides
 description: Builds the weekly Sunday-service PowerPoint (主日崇拜 PPT) from the church's weekly template plus this week's flow, scripture (新译本), creeds, hymn decks and jianpu (简谱) scores, in one of several LED-friendly colour profiles. Use when the user asks to make or update 主日崇拜 slides, 崇拜PPT, worship slides, lyric or 简谱 slides, responsive-reading (启应) slides, or to change the service colour profile (色系).
 metadata:
-  version: "0.4.1"
+  version: "0.4.2"
 ---
 
 # 主日崇拜 slides
@@ -21,7 +21,7 @@ is available for previews. Without LibreOffice, build anyway and tell the user p
 ## Workflow
 
 1. **Collect the inputs.** The user usually gives them in chat, in pieces:
-   - the weekly template `.pptx` (e.g. `25102026 主日崇拜PPT - 早堂二.pptx`): base deck with covers, 讲员PPT
+   - the weekly template `.pptx` (e.g. `主日崇拜模板.pptx`): base deck with covers, 讲员PPT
      placeholder, offering QR, announcements;
    - the service flow (often a screenshot): order of 环节, who reads what (主席 / 会众 / 齐);
    - scripture references (新译本 unless told otherwise), creed / catechism texts;
